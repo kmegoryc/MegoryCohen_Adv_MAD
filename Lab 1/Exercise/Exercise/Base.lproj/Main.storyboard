@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_0" orientation="landscape">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALORIE COUNTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-4n-JXr">
-                                <rect key="frame" x="0.0" y="30" width="568" height="50"/>
+                                <rect key="frame" x="0.0" y="30" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A2u-4I-iHQ"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5yg-fE-rCe">
-                                <rect key="frame" x="163.5" y="100" width="241.5" height="30"/>
+                                <rect key="frame" x="36" y="100" width="248" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories Burned: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NC-os-Lq5">
                                         <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
@@ -41,7 +41,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a8n-pv-57r">
-                                        <rect key="frame" x="141.5" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="141.5" y="0.0" width="106.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="7RY-fL-5uc"/>
                                         </constraints>
@@ -52,7 +52,7 @@
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oMk-t1-eXj">
-                                <rect key="frame" x="40" y="140" width="250" height="130"/>
+                                <rect key="frame" x="0.0" y="140" width="320" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="FK2-VE-i5l">
                                         <variation key="heightClass=compact" constant="250"/>
@@ -80,10 +80,12 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="5S8-Fg-4PB"/>
                                 </connections>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8R-ID-gMW" userLabel="Choice Label">
-                                <rect key="frame" x="348" y="140" width="180" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8R-ID-gMW" userLabel="Choice Label">
+                                <rect key="frame" x="36" y="366" width="248" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="kMr-TT-gwJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="kMr-TT-gwJ">
+                                        <variation key="heightClass=compact" constant="130"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" constant="100" id="s6r-l6-VSG">
                                         <variation key="heightClass=compact" constant="180"/>
                                     </constraint>
@@ -138,11 +140,11 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
-                                <exclude reference="1eX-Rm-KNL"/>
-                                <exclude reference="x7x-MU-awg"/>
                                 <include reference="Cit-c9-rYf"/>
                                 <exclude reference="Ddp-bA-WZL"/>
                                 <exclude reference="nYt-qt-n25"/>
+                                <exclude reference="1eX-Rm-KNL"/>
+                                <exclude reference="x7x-MU-awg"/>
                                 <include reference="0Ev-LI-EE1"/>
                                 <exclude reference="59c-jd-aFK"/>
                                 <include reference="iYG-dP-q4t"/>
@@ -171,11 +173,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXTRA RESOURCES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psK-kf-egl">
-                                <rect key="frame" x="0.0" y="30" width="568" height="50"/>
+                                <rect key="frame" x="0.0" y="30" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8E2-WU-ktD"/>
                                 </constraints>
@@ -184,7 +186,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="5Aj-6d-Up1">
-                                <rect key="frame" x="40" y="100" width="488" height="114"/>
+                                <rect key="frame" x="36" y="100" width="248" height="114"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uei-Y8-cuf">
                                         <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
