@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Aerobic</key>
+	<array>
+		<string>Walking</string>
+		<string>Running</string>
+		<string>Swimming</string>
+		<string>Aquarobics</string>
+		<string>Cycling</string>
+		<string>Rowing</string>
+		<string>Boxing</string>
+		<string>Dancing</string>
+	</array>
+	<key>Anaerobic</key>
+	<array>
+		<string>Squat</string>
+		<string>Leg Press</string>
+		<string>Lunge</string>
+		<string>Deadlift</string>
+		<string>Leg Extension</string>
+		<string>Back Extension</string>
+		<string>Leg Curl</string>
+		<string>Standing Calf Raise</string>
+		<string>Bench Press</string>
+		<string>Chest Fly</string>
+		<string>Push-Up</string>
+		<string>Pull-Up</string>
+		<string>Upright Row</string>
+		<string>Shoulder Press</string>
+		<string>Lateral Raise</string>
+		<string>Shoulder Fly</string>
+	</array>
+	<key>Flexibility</key>
+	<array>
+		<string>Shoulder</string>
+		<string>Triceps</string>
+		<string>Lower Back</string>
+		<string>Hip Flexor</string>
+		<string>Hamstring</string>
+		<string>Quadriceps</string>
+		<string>Calf</string>
+	</array>
+	<key>Stability</key>
+	<array>
+		<string>One-Legged Balance</string>
+		<string>Leg Swings</string>
+		<string>Clock</string>
+		<string>One-Legged Squat</string>
+		<string>Single-Leg Dead Lift</string>
+		<string>Slack Line</string>
+	</array>
+</dict>
+</plist>
