@@ -24,15 +24,15 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*let path:String?
+        let path:String?
         let filePath = docFilePath(kfilename) //path to data file
-        //print(filePath)
         
         //if the data file exists, use it
         if FileManager.default.fileExists(atPath: filePath!){
             path = filePath
             //print(path)
         }
+        //otherwise, use the plist in currect directory
         else {
             path = getDataFile()
         }
@@ -45,18 +45,7 @@ class TableViewController: UITableViewController {
         //application instance
         let app = UIApplication.shared
         //subscribe to the UIApplicationWillResignActiveNotification notification
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: app)*/
-        
-        guard let path = getDataFile() else{
-            print("Error loading file")
-            return
-        }
-        //loads data from todo plist into categoriestList dictionary categoriesData
-        categoriesList.categoriesData = NSDictionary(contentsOfFile: path) as! [String : [String]]
-        //puts all categories into an array
-        categoriesList.categories = Array(categoriesList.categoriesData.keys)
-
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: app)
     }
     
     func docFilePath(_ filename: String) -> String?{
@@ -69,7 +58,6 @@ class TableViewController: UITableViewController {
     }
 
     //called when the UIApplicationWillResignActiveNotification notification is posted
-    //all notification methods take a single NSNotification instance as their argument
     func applicationWillResignActive(_ notification: Notification){
         let filePath = docFilePath(kfilename)
         let data = NSMutableDictionary()
