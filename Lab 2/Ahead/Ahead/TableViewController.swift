@@ -10,17 +10,9 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let todofilename = "todo.plist"
+    let kfilename = "todo.plist"
     //initialize categoriesList of type Categories class
     var categoriesList = Categories()
-    
-    func docFilePath(_ filename: String) -> String? {
-        //locate the documents directory
-        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
-        let dir = path[0] as NSString //document directory 
-        //creates the full path to our data file
-        return dir.appendingPathComponent(filename)
-    }
     
     func getDataFile() -> String? {
         //if pathString is not found by Bundle object, return nil. If it is found, execute everything after the else
@@ -32,12 +24,14 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*let path: String?
-        let filePath = docFilePath(todofilename) //path to data file
+        /*let path:String?
+        let filePath = docFilePath(kfilename) //path to data file
+        //print(filePath)
+        
         //if the data file exists, use it
-        if FileManager.default.fileExists(atPath: filePath!) {
+        if FileManager.default.fileExists(atPath: filePath!){
             path = filePath
-            print("file exists")
+            //print(path)
         }
         else {
             path = getDataFile()
@@ -51,8 +45,7 @@ class TableViewController: UITableViewController {
         //application instance
         let app = UIApplication.shared
         //subscribe to the UIApplicationWillResignActiveNotification notification
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: app)
-        print("gothere")*/
+        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: app)*/
         
         guard let path = getDataFile() else{
             print("Error loading file")
@@ -65,12 +58,25 @@ class TableViewController: UITableViewController {
 
         
     }
+    
+    func docFilePath(_ filename: String) -> String?{
+        //locate the documents directory
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
+        let dir = path[0] as NSString //document directory
+        print(dir)
+        //creates the full path to our data file
+        return dir.appendingPathComponent(filename)
+    }
 
-    func applicationWillResignActive(_ notification: Notification) {
-        let filePath = docFilePath(todofilename)
+    //called when the UIApplicationWillResignActiveNotification notification is posted
+    //all notification methods take a single NSNotification instance as their argument
+    func applicationWillResignActive(_ notification: Notification){
+        let filePath = docFilePath(kfilename)
         let data = NSMutableDictionary()
+        //adds our whole dictionary to the data dictionary
         data.addEntries(from: categoriesList.categoriesData)
         print(data)
+        //write the contents of the array to our plist file
         data.write(toFile: filePath!, atomically: true)
     }
 
