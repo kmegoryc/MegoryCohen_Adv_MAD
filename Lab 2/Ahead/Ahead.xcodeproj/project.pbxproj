@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2663AF571E6482D000F3C987 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2663AF561E6482D000F3C987 /* Search.swift */; };
 		26981CFA1E5EBD2F00F3173E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26981CF91E5EBD2F00F3173E /* AppDelegate.swift */; };
 		26981CFF1E5EBD2F00F3173E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26981CFD1E5EBD2F00F3173E /* Main.storyboard */; };
 		26981D011E5EBD2F00F3173E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26981D001E5EBD2F00F3173E /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2663AF561E6482D000F3C987 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		26981CF61E5EBD2F00F3173E /* Ahead.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ahead.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26981CF91E5EBD2F00F3173E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26981CFE1E5EBD2F00F3173E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 		26981CF81E5EBD2F00F3173E /* Ahead */ = {
 			isa = PBXGroup;
 			children = (
+				2663AF561E6482D000F3C987 /* Search.swift */,
 				26981CF91E5EBD2F00F3173E /* AppDelegate.swift */,
 				26981CFD1E5EBD2F00F3173E /* Main.storyboard */,
 				26CEE6411E5F3789001CA818 /* AddItemViewController.swift */,
@@ -153,6 +156,7 @@
 				26CEE6421E5F3789001CA818 /* AddItemViewController.swift in Sources */,
 				26981D1A1E5ECA9E00F3173E /* DetailTableViewController.swift in Sources */,
 				26981CFA1E5EBD2F00F3173E /* AppDelegate.swift in Sources */,
+				2663AF571E6482D000F3C987 /* Search.swift in Sources */,
 				26981D141E5EC3BC00F3173E /* TableViewController.swift in Sources */,
 				26981D161E5EC3DE00F3173E /* Categories.swift in Sources */,
 			);

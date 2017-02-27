@@ -8,18 +8,22 @@
 
 import UIKit
 
-class DetailTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate  {
-    //initialize listed items as an array
+class DetailTableViewController: UITableViewController {
+    
+    //initialize listed items as an empty array
     var list = [String]()
-    var filteredResults = ["fds", "Fdsfs", "fdsfs"]
     var selectedCategory = 0
-    //initialize search bar
-    @IBOutlet weak var searchBar: UISearchBar!
+    
+    //initialize todoList as an instance of Categories
     var todoList = Categories()
+    
+    var searchController : UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+   
     
     override func viewWillAppear(_ animated: Bool) {
         //puts all categories into an array
@@ -28,6 +32,21 @@ class DetailTableViewController: UITableViewController, UISearchBarDelegate, UIS
         let chosenCategory = todoList.categories[selectedCategory]
         //make the list array equal to the array at the chosen category
         list = todoList.categoriesData[chosenCategory]! as [String]
+        
+        //search results
+        let resultsController = Search() //create an instance of our Search class
+        resultsController.allwords = list //set the allwords property to our list array
+        searchController = UISearchController(searchResultsController: resultsController) //initialize our search controller with the resultsController when it has search results to display
+        
+        //search bar configuration
+        searchController.searchBar.placeholder = "Enter a search term" //place holder text
+        tableView.tableHeaderView=searchController.searchBar //install the search bar as the table header
+        searchController.searchResultsUpdater = resultsController //sets the instance to update search results
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func unwindSegue (_ segue:UIStoryboardSegue){
@@ -44,11 +63,6 @@ class DetailTableViewController: UITableViewController, UISearchBarDelegate, UIS
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,23 +71,11 @@ class DetailTableViewController: UITableViewController, UISearchBarDelegate, UIS
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /*if (tableView == self.searchDisplayController?.searchResultsTableView) {
-            return filteredResults.count
-        }
-        else {
-            return list.count
-        }*/
         return list.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
-        /*if ([UISearchController class]) {
-            cell.textLabel?.text = filteredResults[indexPath.row]
-        }
-        else {
-            cell.textLabel?.text = list[indexPath.row]
-        }*/
         cell.textLabel?.text = list[indexPath.row]
         return cell
     }

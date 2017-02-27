@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kWh-QH-Qyt" id="ASa-2w-8e2">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -49,20 +49,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Items..." id="nGG-OU-S8Z">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="Afq-jE-Jv0" id="9yD-SJ-f4O"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIdentifier" id="gsp-Sz-4Fs">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gsp-Sz-4Fs" id="var-dB-BKE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -79,19 +71,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="searchBar" destination="nGG-OU-S8Z" id="jH3-TL-wgC"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddz-B5-dXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="SNn-5H-JsR">
-                    <connections>
-                        <outlet property="delegate" destination="Afq-jE-Jv0" id="WBq-pb-1Kb"/>
-                        <outlet property="searchContentsController" destination="Afq-jE-Jv0" id="hRZ-Jo-dEV"/>
-                        <outlet property="searchResultsDataSource" destination="Afq-jE-Jv0" id="vYQ-tv-Wco"/>
-                        <outlet property="searchResultsDelegate" destination="Afq-jE-Jv0" id="wzC-f5-wpl"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="509" y="-157"/>
         </scene>
