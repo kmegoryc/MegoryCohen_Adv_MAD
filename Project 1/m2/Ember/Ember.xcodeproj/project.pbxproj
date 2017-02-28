@@ -8,26 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		26147BB61E64DE2B00E14712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB51E64DE2B00E14712 /* AppDelegate.swift */; };
-		26147BB81E64DE2B00E14712 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB71E64DE2B00E14712 /* FirstViewController.swift */; };
-		26147BBA1E64DE2B00E14712 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB91E64DE2B00E14712 /* SecondViewController.swift */; };
+		26147BB81E64DE2B00E14712 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB71E64DE2B00E14712 /* Home.swift */; };
 		26147BBD1E64DE2B00E14712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26147BBB1E64DE2B00E14712 /* Main.storyboard */; };
 		26147BBF1E64DE2B00E14712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26147BBE1E64DE2B00E14712 /* Assets.xcassets */; };
 		26147BC21E64DE2B00E14712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26147BC01E64DE2B00E14712 /* LaunchScreen.storyboard */; };
 		26147BCA1E64FE2500E14712 /* Cigarette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BC91E64FE2500E14712 /* Cigarette.swift */; };
-		26147BCC1E65052500E14712 /* HealthTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BCB1E65052500E14712 /* HealthTableViewController.swift */; };
+		26147BCE1E654F5900E14712 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BCD1E654F5900E14712 /* Health.swift */; };
+		26147BD01E654F8100E14712 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BCF1E654F8100E14712 /* Progress.swift */; };
+		26147BD41E65502900E14712 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BD31E65502900E14712 /* Goals.swift */; };
+		26147BD61E6558B800E14712 /* health.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26147BD51E6558B800E14712 /* health.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26147BB21E64DE2B00E14712 /* Ember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26147BB51E64DE2B00E14712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26147BB71E64DE2B00E14712 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		26147BB91E64DE2B00E14712 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		26147BB71E64DE2B00E14712 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		26147BBC1E64DE2B00E14712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		26147BBE1E64DE2B00E14712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26147BC11E64DE2B00E14712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26147BC31E64DE2B00E14712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26147BC91E64FE2500E14712 /* Cigarette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cigarette.swift; sourceTree = "<group>"; };
-		26147BCB1E65052500E14712 /* HealthTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTableViewController.swift; sourceTree = "<group>"; };
+		26147BCD1E654F5900E14712 /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		26147BCF1E654F8100E14712 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		26147BD31E65502900E14712 /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		26147BD51E6558B800E14712 /* health.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = health.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +64,15 @@
 		26147BB41E64DE2B00E14712 /* Ember */ = {
 			isa = PBXGroup;
 			children = (
+				26147BD31E65502900E14712 /* Goals.swift */,
 				26147BB51E64DE2B00E14712 /* AppDelegate.swift */,
-				26147BB71E64DE2B00E14712 /* FirstViewController.swift */,
-				26147BB91E64DE2B00E14712 /* SecondViewController.swift */,
+				26147BB71E64DE2B00E14712 /* Home.swift */,
 				26147BBB1E64DE2B00E14712 /* Main.storyboard */,
-				26147BCB1E65052500E14712 /* HealthTableViewController.swift */,
+				26147BCF1E654F8100E14712 /* Progress.swift */,
+				26147BCD1E654F5900E14712 /* Health.swift */,
 				26147BC91E64FE2500E14712 /* Cigarette.swift */,
 				26147BBE1E64DE2B00E14712 /* Assets.xcassets */,
+				26147BD51E6558B800E14712 /* health.plist */,
 				26147BC01E64DE2B00E14712 /* LaunchScreen.storyboard */,
 				26147BC31E64DE2B00E14712 /* Info.plist */,
 			);
@@ -136,6 +142,7 @@
 				26147BC21E64DE2B00E14712 /* LaunchScreen.storyboard in Resources */,
 				26147BBF1E64DE2B00E14712 /* Assets.xcassets in Resources */,
 				26147BBD1E64DE2B00E14712 /* Main.storyboard in Resources */,
+				26147BD61E6558B800E14712 /* health.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,11 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26147BBA1E64DE2B00E14712 /* SecondViewController.swift in Sources */,
 				26147BB61E64DE2B00E14712 /* AppDelegate.swift in Sources */,
+				26147BD01E654F8100E14712 /* Progress.swift in Sources */,
+				26147BD41E65502900E14712 /* Goals.swift in Sources */,
+				26147BCE1E654F5900E14712 /* Health.swift in Sources */,
 				26147BCA1E64FE2500E14712 /* Cigarette.swift in Sources */,
-				26147BCC1E65052500E14712 /* HealthTableViewController.swift in Sources */,
-				26147BB81E64DE2B00E14712 /* FirstViewController.swift in Sources */,
+				26147BB81E64DE2B00E14712 /* Home.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

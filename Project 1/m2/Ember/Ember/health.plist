@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Blood pressure</key>
+	<array/>
+	<key>Remaining nicotine in your bloodstream</key>
+	<array/>
+	<key>Carbon monoxide and oxygen levels</key>
+	<array/>
+	<key>Sudden death risk</key>
+	<array/>
+	<key>Sense of taste and smell </key>
+	<array/>
+	<key>Respiratory function</key>
+	<array/>
+	<key>Skin hydration</key>
+	<array/>
+	<key>Heart disease risk</key>
+	<string></string>
+	<key>Lung cancer risk</key>
+	<string></string>
+</dict>
+</plist>

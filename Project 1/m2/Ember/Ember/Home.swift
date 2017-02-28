@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class Home: UIViewController {
     
     var dailyCigaretteCount = Cigarette()
     var dailyGoal = 20

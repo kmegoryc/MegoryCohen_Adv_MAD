@@ -1,5 +1,5 @@
 //
-//  HealthTableViewController.swift
+//  Health.swift
 //  Ember
 //
 //  Created by Keren Megory-Cohen on 2/27/17.
@@ -8,7 +8,18 @@
 
 import UIKit
 
-class HealthTableViewController: UITableViewController {
+class Health: UITableViewController {
+    
+    var healthData = [String : [String]]()
+    var healthArray = [String]()
+    
+    func getDataFile() -> String? {
+        //use a Bundle object of the directory for our application to retrieve the pathname of continents.plist
+        guard let pathString = Bundle.main.path(forResource: "health", ofType: "plist") else {
+            return nil
+        }
+        return pathString
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +29,17 @@ class HealthTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        /*guard let path = getDataFile() else{
+            print("Error loading file")
+            return
+        }
+        
+        //load the data of the plist file into the dictionary
+        healthData = NSDictionary(contentsOfFile: path) as! [String : [String]]
+        //puts all the continents in an array
+        healthArray = Array(healthData.keys)
+        print(healthArray)*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,25 +49,24 @@ class HealthTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    /*override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 12
+        return healthArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        //configure the cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
+        cell.textLabel?.text = healthArray[indexPath.row]
         return cell
-    }
-    */
+    }*/
+ 
 
     /*
     // Override to support conditional editing of the table view.
