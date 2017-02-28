@@ -39,7 +39,7 @@ class DetailTableViewController: UITableViewController {
         searchController = UISearchController(searchResultsController: resultsController) //initialize our search controller with the resultsController when it has search results to display
         
         //search bar configuration
-        searchController.searchBar.placeholder = "Enter a search term" //place holder text
+        searchController.searchBar.placeholder = "Search..." //place holder text
         tableView.tableHeaderView=searchController.searchBar //install the search bar as the table header
         searchController.searchResultsUpdater = resultsController //sets the instance to update search results
     }
