@@ -104,14 +104,24 @@ class ZodiacCollectionViewController: UICollectionViewController, UICollectionVi
         return sectionInsets
     }
     
-    //control header
+    //control header/footer
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var header: CollectionSupplementaryView?
+        var footer: CollectionSupplementaryView?
         if kind == UICollectionElementKindSectionHeader{
             header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Header", for: indexPath) as? CollectionSupplementaryView
-            header?.headerLabel.text = "What is your sign?" }
+            header?.headerLabel.text = "What is your sign?"
+            return header!
+        }
+        if kind == UICollectionElementKindSectionFooter{
+            footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "Footer", for: indexPath) as? CollectionSupplementaryView
+            footer?.footerLabel.text = "Discover your horoscope"
+            return footer!
+        }
+        //return header by default
         return header!
     }
+    
     
     //pass data on segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) { if segue.identifier == "showDetail"{

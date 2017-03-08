@@ -21,7 +21,7 @@
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NuV-oN-9vL">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -95,6 +95,26 @@
                             </constraints>
                             <connections>
                                 <outlet property="headerLabel" destination="ZoO-GJ-geW" id="ist-Mg-BoK"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Footer" id="Wwv-xJ-l4N" customClass="CollectionSupplementaryView" customModule="Zodiac" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="190" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-j8-B9l">
+                                    <rect key="frame" x="160.5" y="25" width="0.0" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.32964743590000001" green="0.32964743590000001" blue="0.32964743590000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="ogh-j8-B9l" firstAttribute="centerX" secondItem="Wwv-xJ-l4N" secondAttribute="centerX" id="8pX-de-HaH"/>
+                                <constraint firstItem="ogh-j8-B9l" firstAttribute="centerY" secondItem="Wwv-xJ-l4N" secondAttribute="centerY" id="DhH-Cz-NLH"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="footerLabel" destination="ogh-j8-B9l" id="CDi-ee-2gB"/>
                             </connections>
                         </collectionReusableView>
                         <connections>

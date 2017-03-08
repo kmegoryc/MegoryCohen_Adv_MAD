@@ -10,5 +10,6 @@ import UIKit
 
 class CollectionSupplementaryView: UICollectionReusableView {
     
+    @IBOutlet weak var footerLabel: UILabel!
     @IBOutlet weak var headerLabel: UILabel!
 }
