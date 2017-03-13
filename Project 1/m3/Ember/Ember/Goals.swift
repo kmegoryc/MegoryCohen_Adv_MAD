@@ -10,67 +10,33 @@ import UIKit
 
 class Goals: UITableViewController {
     
-    var goalsData = [String: String]() //dictionary
-    var goalsKeys = [String]() //array
-    var goalsValues = [String]() //array
+    var information = Profile()
     
-    let filename = "goals.plist"
+    //Goals Section
+    @IBOutlet weak var startingDailyIntakeCell: UILabel!
+    @IBOutlet weak var currentDailyIntakeCell: UILabel!
+    @IBOutlet weak var goalDailyIntakeCell: UILabel!
     
-    func getDataFile() -> String? {
-        //use a Bundle object of the directory for our application to retrieve the pathname of continents.plist
-        guard let pathString = Bundle.main.path(forResource: "goals", ofType: "plist") else {
-            return nil
-        }
-        return pathString
-    }
+    //Details Section
+    @IBOutlet weak var cigaretteBrandCell: UILabel!
+    @IBOutlet weak var packetSizeCell: UILabel!
+    @IBOutlet weak var packetCostCell: UILabel!
     
-    func docFilePath(_ filename: String) -> String?{
-        //locate the documents directory
-        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
-        let dir = path[0] as NSString //document directory
-        //creates the full path to our data file
-        return dir.appendingPathComponent(filename)
-    }
-    
-    //called when the UIApplicationWillResignActiveNotification notification is posted
-    func applicationWillResignActive(_ notification: Notification){
-        let filePath = docFilePath(filename)
-        let data = NSMutableDictionary()
-        //adds our whole dictionary to the data dictionary
-        data.addEntries(from: goalsData)
-        print(data)
-        //write the contents of the array to our plist file
-        data.write(toFile: filePath!, atomically: true)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
         
-        let path:String?
-        let filePath = docFilePath(filename) //path to data file
+        //goals
+        startingDailyIntakeCell.text = String(information.startingDailyIntake)
+        currentDailyIntakeCell.text = String(information.currentDailyIntake)
+        goalDailyIntakeCell.text = String(information.goalDailyIntake)
         
-        //if the data file exists, use it
-        if FileManager.default.fileExists(atPath: filePath!){
-            path = filePath
-        }
-            
-            //otherwise, use the plist in currect directory
-        else {
-            path = getDataFile()
-        }
+        //details
+        cigaretteBrandCell.text = String(information.cigaretteBrand)
+        packetSizeCell.text = String(information.cigarettePacketCost)
+        packetCostCell.text = String(information.cigarettePacketCost)
         
-        //loads data from plist into dictionary
-        goalsData = NSDictionary(contentsOfFile: path!) as! [String : String]
-        //puts all categories into an array
-        goalsKeys = Array(goalsData.keys)
-        goalsValues = Array(goalsData.values)
-        
-        //application instance
-        let app = UIApplication.shared
-        //subscribe to the UIApplicationWillResignActiveNotification notification
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: app)
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,15 +44,6 @@ class Goals: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //configure the cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
-        cell.textLabel?.text = goalsKeys[indexPath.row]
-        print(goalsValues[indexPath.row])
-        cell.detailTextLabel?.text = goalsValues[indexPath.row]
-        return cell
-    }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

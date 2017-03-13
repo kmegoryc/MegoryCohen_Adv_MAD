@@ -10,92 +10,23 @@ import UIKit
 
 class Health: UITableViewController {
     
-    var healthData = [String: String]() //dictionary
-    var healthArray = [String]() //array
-    
-    let filename = "health.plist"
-    
-    func getDataFile() -> String? {
-        //use a Bundle object of the directory for our application to retrieve the pathname of continents.plist
-        guard let pathString = Bundle.main.path(forResource: "health", ofType: "plist") else {
-            return nil
-        }
-        return pathString
-    }
-    
-    func docFilePath(_ filename: String) -> String?{
-        //locate the documents directory
-        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.allDomainsMask, true)
-        let dir = path[0] as NSString //document directory
-        //creates the full path to our data file
-        return dir.appendingPathComponent(filename)
-    }
-    
-    //called when the UIApplicationWillResignActiveNotification notification is posted
-    func applicationWillResignActive(_ notification: Notification){
-        let filePath = docFilePath(filename)
-        let data = NSMutableDictionary()
-        //adds our whole dictionary to the data dictionary
-        data.addEntries(from: healthData)
-        print(data)
-        //write the contents of the array to our plist file
-        data.write(toFile: filePath!, atomically: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 140
         self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
-        
-        let path:String?
-        let filePath = docFilePath(filename) //path to data file
-        
-        //if the data file exists, use it
-        if FileManager.default.fileExists(atPath: filePath!){
-            path = filePath
-        }
-        //otherwise, use the plist in currect directory
-        else {
-            path = getDataFile()
-        }
-        
-        //loads data from plist into dictionary
-        healthData = NSDictionary(contentsOfFile: path!) as! [String : String]
-        //puts all categories into an array
-        healthArray = Array(healthData.keys)
-        
-        //application instance
-        let app = UIApplication.shared
-        //subscribe to the UIApplicationWillResignActiveNotification notification
-        NotificationCenter.default.addObserver(self, selector: #selector(UIApplicationDelegate.applicationWillResignActive(_:)), name: NSNotification.Name(rawValue: "UIApplicationWillResignActiveNotification"), object: app)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return healthArray.count
-    }
-
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //configure the cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
-        cell.textLabel?.text = healthArray[indexPath.row]
-        //cell.textLabel?.textColor = UIColor.white
-        return cell
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

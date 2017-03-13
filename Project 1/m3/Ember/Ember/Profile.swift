@@ -9,8 +9,10 @@
 import Foundation
 
 class Profile {
-    var initialDailyIntake = 0
-    var currentDailyIntake = 0
-    var goalDailyIntake = 0
-    var cigaretteUse : [String: String] =  ["Brand": "", "Packet Price": "", "Number of cigarettes per package": ""]
+    var startingDailyIntake : Int = 0
+    var currentDailyIntake : Int = 0
+    var goalDailyIntake : Int = 0
+    var cigaretteBrand : String = ""
+    var cigarettePacketSize : Int = 0
+    var cigarettePacketCost : Int = 0
 }
