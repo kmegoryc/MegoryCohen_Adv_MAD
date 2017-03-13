@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Starting Daily Intake</key>
+	<string></string>
+	<key>Current Daily Intake</key>
+	<string></string>
+	<key>Goal Daily Intake</key>
+	<string></string>
+	<key>Cigarette brand of choice</key>
+	<string></string>
+	<key>Number of cigarettes per packet</key>
+	<string></string>
+	<key>Packet cost</key>
+	<string></string>
+</dict>
+</plist>
