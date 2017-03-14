@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="turquoise" translatesAutoresizingMaskIntoConstraints="NO" id="Wkk-45-pQK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue-fade-background" translatesAutoresizingMaskIntoConstraints="NO" id="Wkk-45-pQK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flame" translatesAutoresizingMaskIntoConstraints="NO" id="rDi-CN-cyw">
@@ -57,7 +57,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blue-fade-background" width="1848" height="1224"/>
         <image name="flame" width="556" height="556"/>
-        <image name="turquoise" width="236" height="365"/>
     </resources>
 </document>

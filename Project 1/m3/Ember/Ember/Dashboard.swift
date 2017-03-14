@@ -20,7 +20,7 @@ class Dashboard: UIViewController {
     
     var recordsData = [String:Int]()
     
-    var dailyGoal = 0
+    var dailyGoal: Int = 0
     var duration = 0
     
     var dailyCigaretteInfo = Cigarette()
@@ -81,7 +81,9 @@ class Dashboard: UIViewController {
     
     @IBAction func addCigarette(_ sender: Any)
     {
-        dailyGoal = Int(goalsValues[0])!
+        //update daily goal
+        dailyGoal = Int(goalsData["Weekly Goal"]!)!
+        
         //add cigarette to intake array
         dailyCigaretteInfo.intake += 1
         
@@ -162,8 +164,6 @@ class Dashboard: UIViewController {
         detailsKeys = Array(detailsData.keys)
         detailsValues = Array(detailsData.values)
         
-        dailyGoal = Int(goalsValues[3])!
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -180,8 +180,6 @@ class Dashboard: UIViewController {
         minutes.text = (String(min) + ":" +  String(seconds) + " minutes")
         hours.text = (String(hrs) + " hours")
         days.text = (String(dys) + " days")
-        
-        dailyGoal = Int(goalsValues[3])!
     }
 
     override func didReceiveMemoryWarning() {

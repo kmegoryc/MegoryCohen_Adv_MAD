@@ -5,10 +5,10 @@
 	<key>Starting Daily Intake</key>
 	<string>20</string>
 	<key>Current Daily Intake</key>
-	<string>20</string>
+	<string>10</string>
 	<key>Goal Timespan</key>
 	<string>1</string>
 	<key>Weekly Goal</key>
-	<string>10</string>
+	<string>5</string>
 </dict>
 </plist>
