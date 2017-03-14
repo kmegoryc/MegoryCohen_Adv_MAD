@@ -11,4 +11,5 @@ import Foundation
 class Cigarette {
     var intake: Int = 0
     var brand: String = ""
+    var timeAtLast : NSDate = NSDate(timeIntervalSince1970: 1415637900)
 }

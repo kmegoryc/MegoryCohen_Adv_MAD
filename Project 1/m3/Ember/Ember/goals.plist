@@ -3,16 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>Starting Daily Intake</key>
-	<string></string>
+	<string>0</string>
 	<key>Current Daily Intake</key>
-	<string></string>
+	<string>0</string>
 	<key>Goal Daily Intake</key>
-	<string></string>
-	<key>Cigarette brand of choice</key>
-	<string></string>
-	<key>Number of cigarettes per packet</key>
-	<string></string>
-	<key>Packet cost</key>
-	<string></string>
+	<string>0</string>
+	<key>Pack Size</key>
+	<string>0</string>
+	<key>Pack Cost</key>
+	<string>0</string>
 </dict>
 </plist>

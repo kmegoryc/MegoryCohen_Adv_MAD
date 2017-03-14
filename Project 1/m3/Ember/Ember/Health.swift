@@ -15,7 +15,6 @@ class Health: UITableViewController {
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 140
-        self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
     }
 
     override func didReceiveMemoryWarning() {
