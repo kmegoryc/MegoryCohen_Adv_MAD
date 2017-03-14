@@ -2,13 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Starting Daily Intake</key>
+	<key>Pack Size</key>
 	<string>20</string>
-	<key>Current Daily Intake</key>
-	<string>20</string>
-	<key>Goal Timespan</key>
-	<string>1</string>
-	<key>Weekly Goal</key>
-	<string>10</string>
+	<key>Pack Cost</key>
+	<string>5.25</string>
 </dict>
 </plist>

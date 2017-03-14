@@ -12,6 +12,7 @@ class EditValueViewController: UIViewController {
     
     var newValue = String()
     var selectedSetting = 0
+    var index = 0
     
     @IBOutlet weak var editValue: UITextField!
     

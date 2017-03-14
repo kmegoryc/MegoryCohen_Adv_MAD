@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26147BB61E64DE2B00E14712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB51E64DE2B00E14712 /* AppDelegate.swift */; };
-		26147BB81E64DE2B00E14712 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB71E64DE2B00E14712 /* Home.swift */; };
+		26147BB81E64DE2B00E14712 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BB71E64DE2B00E14712 /* Dashboard.swift */; };
 		26147BBF1E64DE2B00E14712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26147BBE1E64DE2B00E14712 /* Assets.xcassets */; };
 		26147BC21E64DE2B00E14712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26147BC01E64DE2B00E14712 /* LaunchScreen.storyboard */; };
 		26147BCA1E64FE2500E14712 /* Cigarette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BC91E64FE2500E14712 /* Cigarette.swift */; };
@@ -16,14 +16,16 @@
 		26147BD01E654F8100E14712 /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26147BCF1E654F8100E14712 /* Progress.swift */; };
 		26D409CD1E7783E300DAE842 /* goals.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D409CC1E7783E300DAE842 /* goals.plist */; };
 		26D409D71E77B01A00DAE842 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D409D61E77B01A00DAE842 /* Main.storyboard */; };
-		26D409D91E77B48100DAE842 /* Goals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D409D81E77B48100DAE842 /* Goals.swift */; };
+		26D409D91E77B48100DAE842 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D409D81E77B48100DAE842 /* Settings.swift */; };
 		26D409DB1E77BC4B00DAE842 /* EditValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D409DA1E77BC4B00DAE842 /* EditValueViewController.swift */; };
+		26D409DF1E77E9B300DAE842 /* details.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D409DE1E77E9B300DAE842 /* details.plist */; };
+		26D409E11E77FA1200DAE842 /* records.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26D409E01E77FA1200DAE842 /* records.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26147BB21E64DE2B00E14712 /* Ember.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ember.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26147BB51E64DE2B00E14712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		26147BB71E64DE2B00E14712 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		26147BB71E64DE2B00E14712 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		26147BBE1E64DE2B00E14712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26147BC11E64DE2B00E14712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		26147BC31E64DE2B00E14712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -32,8 +34,10 @@
 		26147BCF1E654F8100E14712 /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
 		26D409CC1E7783E300DAE842 /* goals.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = goals.plist; sourceTree = "<group>"; };
 		26D409D61E77B01A00DAE842 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		26D409D81E77B48100DAE842 /* Goals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goals.swift; sourceTree = "<group>"; };
+		26D409D81E77B48100DAE842 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		26D409DA1E77BC4B00DAE842 /* EditValueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditValueViewController.swift; sourceTree = "<group>"; };
+		26D409DE1E77E9B300DAE842 /* details.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = details.plist; sourceTree = "<group>"; };
+		26D409E01E77FA1200DAE842 /* records.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = records.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +71,16 @@
 			isa = PBXGroup;
 			children = (
 				26147BB51E64DE2B00E14712 /* AppDelegate.swift */,
-				26147BB71E64DE2B00E14712 /* Home.swift */,
+				26147BB71E64DE2B00E14712 /* Dashboard.swift */,
 				26D409D61E77B01A00DAE842 /* Main.storyboard */,
 				26D409DA1E77BC4B00DAE842 /* EditValueViewController.swift */,
-				26D409D81E77B48100DAE842 /* Goals.swift */,
+				26D409D81E77B48100DAE842 /* Settings.swift */,
 				26147BCF1E654F8100E14712 /* Progress.swift */,
 				26147BCD1E654F5900E14712 /* Health.swift */,
 				26147BC91E64FE2500E14712 /* Cigarette.swift */,
+				26D409E01E77FA1200DAE842 /* records.plist */,
 				26147BBE1E64DE2B00E14712 /* Assets.xcassets */,
+				26D409DE1E77E9B300DAE842 /* details.plist */,
 				26D409CC1E7783E300DAE842 /* goals.plist */,
 				26147BC01E64DE2B00E14712 /* LaunchScreen.storyboard */,
 				26147BC31E64DE2B00E14712 /* Info.plist */,
@@ -143,8 +149,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				26147BC21E64DE2B00E14712 /* LaunchScreen.storyboard in Resources */,
+				26D409E11E77FA1200DAE842 /* records.plist in Resources */,
 				26147BBF1E64DE2B00E14712 /* Assets.xcassets in Resources */,
 				26D409CD1E7783E300DAE842 /* goals.plist in Resources */,
+				26D409DF1E77E9B300DAE842 /* details.plist in Resources */,
 				26D409D71E77B01A00DAE842 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,11 +166,11 @@
 			files = (
 				26147BB61E64DE2B00E14712 /* AppDelegate.swift in Sources */,
 				26147BD01E654F8100E14712 /* Progress.swift in Sources */,
-				26D409D91E77B48100DAE842 /* Goals.swift in Sources */,
+				26D409D91E77B48100DAE842 /* Settings.swift in Sources */,
 				26D409DB1E77BC4B00DAE842 /* EditValueViewController.swift in Sources */,
 				26147BCE1E654F5900E14712 /* Health.swift in Sources */,
 				26147BCA1E64FE2500E14712 /* Cigarette.swift in Sources */,
-				26147BB81E64DE2B00E14712 /* Home.swift in Sources */,
+				26147BB81E64DE2B00E14712 /* Dashboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

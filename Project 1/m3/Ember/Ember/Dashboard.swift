@@ -8,11 +8,20 @@
 
 import UIKit
 
-class Home: UIViewController {
+class Dashboard: UIViewController {
     
     var goalsData = [String:String]()
     var goalsValues = [String]()
-    var dailyGoal = 20
+    var goalsKeys = [String]()
+    
+    var detailsData = [String:String]()
+    var detailsValues = [String]()
+    var detailsKeys = [String]()
+    
+    var recordsData = [String:Int]()
+    
+    var dailyGoal = 0
+    var duration = 0
     
     var dailyCigaretteInfo = Cigarette()
     var progress : Float = 0.0
@@ -35,13 +44,15 @@ class Home: UIViewController {
 
     @IBOutlet weak var addCigarette: UIButton!
     
-    // GOALS DATA
+    // GOALS/DETAILS DATA
     
-    let kfilename = "goals.plist"
+    let gfilename = "goals.plist"
+    let dfilename = "details.plist"
+    let rfilename = "records.plist"
     
-    func getDataFile() -> String? {
+    func getDataFile(resource: String, type: String) -> String? {
         //use a Bundle object of the directory for our application to retrieve the pathname of continents.plist
-        guard let pathString = Bundle.main.path(forResource: "goals", ofType: "plist") else {
+        guard let pathString = Bundle.main.path(forResource: resource, ofType: type) else {
             return nil
         }
         return pathString
@@ -56,8 +67,21 @@ class Home: UIViewController {
         return dir.appendingPathComponent(filename)
     }
     
-    @IBAction func addCigarette(_ sender: Any) {
-        
+    //called when the UIApplicationWillResignActiveNotification notification is posted
+    //all notification methods take a single NSNotification instance as their argument
+    func applicationWillResignActive(_ notification: Notification){
+        let filePath = docFilePath(rfilename)
+        let data = NSMutableDictionary()
+        //adds our whole dictionary to the data dictionary
+        data.addEntries(from: recordsData)
+        //write the contents of the array to our plist file
+        data.write(toFile: filePath!, atomically: true)
+    }
+
+    
+    @IBAction func addCigarette(_ sender: Any)
+    {
+        dailyGoal = Int(goalsValues[0])!
         //add cigarette to intake array
         dailyCigaretteInfo.intake += 1
         
@@ -73,6 +97,7 @@ class Home: UIViewController {
         
         //record current date
         dailyCigaretteInfo.timeAtLast = NSDate()
+        recordsData.updateValue(duration, forKey: "timeAtLast")
         print(dailyCigaretteInfo.timeAtLast)
     }
     
@@ -108,32 +133,44 @@ class Home: UIViewController {
         smoked.text = String(dailyCigaretteInfo.intake)
         remaining.text = String((dailyGoal - (dailyCigaretteInfo.intake)))
         
-        // GOALS DATA
+        // GOALS/DETAILS DATA
         
-        //load plist data
-        let path:String?
+        var path1: String?
+        let path2: String?
         
-        let filePath = docFilePath(kfilename) //path to data file
-        print(filePath)
+        let filePath1 = docFilePath(gfilename) //path to data file
+        let filePath2 = docFilePath(dfilename) //path to data file
         
         //if the data file exists, use it
-        if FileManager.default.fileExists(atPath: filePath!){
-            path = filePath
+        if FileManager.default.fileExists(atPath: filePath1!){
+            path1 = filePath1
+        }
+        if FileManager.default.fileExists(atPath: filePath2!){
+            path2 = filePath2
         }
         else {
-            path = getDataFile()
+            path1 = getDataFile(resource: "goals", type: "plist")
+            path2 = getDataFile(resource: "details", type: "plist")
         }
         
         //load the data of the plist file into the dictionary
-        goalsData = NSDictionary(contentsOfFile: path!) as! [String:String]
+        goalsData = NSDictionary(contentsOfFile: path1!) as! [String:String]
+        detailsData = NSDictionary(contentsOfFile: path2!) as! [String:String]
         //puts all the continents in an array
+        goalsKeys = Array(goalsData.keys)
         goalsValues = Array(goalsData.values)
+        detailsKeys = Array(detailsData.keys)
+        detailsValues = Array(detailsData.values)
+        
+        dailyGoal = Int(goalsValues[3])!
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         //calculate time since last cigarette
         let elapsed = Date().timeIntervalSince(dailyCigaretteInfo.timeAtLast as Date)
-        let duration = Int(elapsed) //total seconds
+        duration = Int(elapsed) //total seconds
         
         let seconds = (((duration%86400)%(60*60))%60) //total seconds remainder
         let min = ((duration%86400)%(60*60))/60 //seconds remainder of hours converted to minutes
@@ -143,6 +180,8 @@ class Home: UIViewController {
         minutes.text = (String(min) + ":" +  String(seconds) + " minutes")
         hours.text = (String(hrs) + " hours")
         days.text = (String(dys) + " days")
+        
+        dailyGoal = Int(goalsValues[3])!
     }
 
     override func didReceiveMemoryWarning() {

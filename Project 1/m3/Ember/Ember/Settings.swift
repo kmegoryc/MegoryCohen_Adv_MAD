@@ -8,17 +8,22 @@
 
 import UIKit
 
-class Goals: UITableViewController {
+class Settings: UITableViewController {
     
     var goalsData = [String:String]()
     var goalsValues = [String]()
     var goalsKeys = [String]()
     
-    let kfilename = "goals.plist"
+    var detailsData = [String:String]()
+    var detailsValues = [String]()
+    var detailsKeys = [String]()
     
-    func getDataFile() -> String? {
+    let gfilename = "goals.plist"
+    let dfilename = "details.plist"
+    
+    func getDataFile(resource: String, type: String) -> String? {
         //use a Bundle object of the directory for our application to retrieve the pathname of continents.plist
-        guard let pathString = Bundle.main.path(forResource: "goals", ofType: "plist") else {
+        guard let pathString = Bundle.main.path(forResource: resource, ofType: type) else {
             return nil
         }
         return pathString
@@ -36,13 +41,16 @@ class Goals: UITableViewController {
     //called when the UIApplicationWillResignActiveNotification notification is posted
     //all notification methods take a single NSNotification instance as their argument
     func applicationWillResignActive(_ notification: Notification){
-        let filePath = docFilePath(kfilename)
-        let data = NSMutableDictionary()
+        let filePath1 = docFilePath(gfilename)
+        let filePath2 = docFilePath(dfilename)
+        let data1 = NSMutableDictionary()
+        let data2 = NSMutableDictionary()
         //adds our whole dictionary to the data dictionary
-        data.addEntries(from: goalsData)
-        //print(data)
+        data1.addEntries(from: goalsData)
+        data2.addEntries(from: detailsData)
         //write the contents of the array to our plist file
-        data.write(toFile: filePath!, atomically: true)
+        data1.write(toFile: filePath1!, atomically: true)
+        data2.write(toFile: filePath2!, atomically: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -51,8 +59,16 @@ class Goals: UITableViewController {
             let targetController = destinationNavigationController.topViewController as! EditValueViewController
             let editingCell = sender as! UITableViewCell
             let indexPath = tableView.indexPath(for: editingCell)
-            targetController.title = goalsKeys[indexPath!.row]
             targetController.selectedSetting = (indexPath?.row)!
+            
+            if (indexPath?.section == 0) {
+                targetController.title = goalsKeys[indexPath!.row]
+            }
+            else if (indexPath?.section == 1) {
+                targetController.title = detailsKeys[indexPath!.row]
+            }
+            //send target controller the current section
+            targetController.index = (indexPath?.section)!
         }
     }
     
@@ -60,16 +76,24 @@ class Goals: UITableViewController {
         if segue.identifier=="saveSegue"{
         let source = segue.source as! EditValueViewController
             if ((source.newValue.isEmpty) == false){
+                if (source.index == 0) {
+                    //write new value to goalsData, since goalsData is being recorded in the persistent plist
+                    let chosenSetting = Array(goalsData.keys)[source.selectedSetting]
+                    goalsData.updateValue(source.newValue, forKey: chosenSetting)
+                    
+                    //write new value to goalsValues, since this array is being written to table view
+                    goalsValues[source.selectedSetting] = source.newValue
+                }
+                else if (source.index == 1) {
+                    //write new value to goalsData, since goalsData is being recorded in the persistent plist
+                    let chosenSetting = Array(detailsData.keys)[source.selectedSetting]
+                    detailsData.updateValue(source.newValue, forKey: chosenSetting)
+                    
+                    //write new value to goalsValues, since this array is being written to table view
+                    detailsValues[source.selectedSetting] = source.newValue
+
+                }
                 
-                //write new value to goalsData, since goalsData is being recorded in the persistent plist
-                let chosenSetting = Array(goalsData.keys)[source.selectedSetting]
-                //print(chosenSetting)
-                //print(source.newValue)
-                goalsData.updateValue(source.newValue, forKey: chosenSetting)
-                
-               // goalsData[chosenSetting].value = source.newValue
-                //write new value to goalsValues, since this array is being written to table view
-                goalsValues[source.selectedSetting] = source.newValue
                 tableView.reloadData()
             }
         }
@@ -84,23 +108,32 @@ class Goals: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let path:String?
+        var path1: String?
+        let path2: String?
         
-        let filePath = docFilePath(kfilename) //path to data file
+        let filePath1 = docFilePath(gfilename) //path to data file
+        let filePath2 = docFilePath(dfilename) //path to data file
         
         //if the data file exists, use it
-        if FileManager.default.fileExists(atPath: filePath!){
-            path = filePath
+        if FileManager.default.fileExists(atPath: filePath1!){
+            path1 = filePath1
+        }
+        if FileManager.default.fileExists(atPath: filePath2!){
+            path2 = filePath2
         }
         else {
-            path = getDataFile()
+            path1 = getDataFile(resource: "goals", type: "plist")
+            path2 = getDataFile(resource: "details", type: "plist")
         }
         
         //load the data of the plist file into the dictionary
-        goalsData = NSDictionary(contentsOfFile: path!) as! [String:String]
+        goalsData = NSDictionary(contentsOfFile: path1!) as! [String:String]
+        detailsData = NSDictionary(contentsOfFile: path2!) as! [String:String]
         //puts all the continents in an array
         goalsKeys = Array(goalsData.keys)
         goalsValues = Array(goalsData.values)
+        detailsKeys = Array(detailsData.keys)
+        detailsValues = Array(detailsData.values)
         
         //application instance
         let app = UIApplication.shared
@@ -117,20 +150,45 @@ class Goals: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return goalsKeys.count
+        var rows: Int = 0
+        let numberOfRowsAtSection: [Int] = [goalsData.count, detailsData.count]
+        
+        if section < numberOfRowsAtSection.count {
+            rows = numberOfRowsAtSection[section]
+        }
+        return rows
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //configure the cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentifier", for: indexPath)
-        cell.textLabel?.text = goalsKeys[indexPath.row]
-        cell.detailTextLabel?.text = goalsValues[indexPath.row]
+        if (indexPath.section == 0) {
+            cell.textLabel?.text = goalsKeys[indexPath.row]
+            if (indexPath.row == 1) {
+                cell.detailTextLabel?.text = (goalsValues[indexPath.row] + " weeks")
+            }
+            else if (indexPath.row == 3){
+                cell.detailTextLabel?.text = (goalsValues[indexPath.row] + " cigarettes a day")
+            }
+            else {
+                cell.detailTextLabel?.text = (goalsValues[indexPath.row] + " cigarettes")
+            }
+        }
+        if (indexPath.section == 1) {
+            cell.textLabel?.text = detailsKeys[indexPath.row]
+            if (indexPath.row == 0) {
+                cell.detailTextLabel?.text = (detailsValues[indexPath.row] + " dollars")
+            }
+            else {
+                cell.detailTextLabel?.text = (detailsValues[indexPath.row] + " cigarettes")
+            }
+        }
         return cell
     }
     
