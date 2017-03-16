@@ -110,15 +110,19 @@ class ResortsTableViewController: UITableViewController {
             detailVC.title = resortList.resorts[indexPath.row]
             detailVC.resortListDetail = resortList
             detailVC.selectedResort = indexPath.row
-        } //for detail disclosure
-        /*else if segue.identifier == "infoSegue"{
-            let infoVC = segue.destination as! ResortInfoViewController
-            //let editingCell = sender as! UITableViewCell
-            //let indexPath = tableView.indexPath(for: editingCell)
-            //infoVC.name = resortList.resorts[indexPath!.row]
-            //let runs = continentList.continentData[infoVC.name]! as [String]
-            //infoVC.number = String(countries.count)
-        }*/
+        }
+        //for detail disclosure
+        if segue.identifier == "infoSegue" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let name = resortList.resorts[indexPath.row]
+                //let url = resort["url"]! as String
+                let controller = (segue.destination as! UINavigationController).topViewController as! ResortInfoViewController
+                //controller.detailItem = url as AnyObject?
+                controller.title = name
+                //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
+                //controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
     
 

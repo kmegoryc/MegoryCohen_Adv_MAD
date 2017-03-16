@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CellIdentifier" id="x6h-Ee-Wtl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" id="x6h-Ee-Wtl">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6h-Ee-Wtl" id="nQd-wO-yVh">
-                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="545" y="50"/>
         </scene>
-        <!--Resort Info-->
+        <!--Resort Info View Controller-->
         <scene sceneID="pUK-6L-D4C">
             <objects>
                 <viewController id="s3Q-bi-SZC" customClass="ResortInfoViewController" customModule="Resorts" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Resort Info" id="sxX-8M-zYe"/>
+                    <navigationItem key="navigationItem" id="sxX-8M-zYe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al1-wJ-j1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

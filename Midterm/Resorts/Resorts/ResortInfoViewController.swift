@@ -10,6 +10,9 @@ import UIKit
 
 class ResortInfoViewController: UIViewController {
 
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webSpinner: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
