@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,16 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellIdentifier" id="x6h-Ee-Wtl">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="CellIdentifier" id="x6h-Ee-Wtl">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6h-Ee-Wtl" id="nQd-wO-yVh">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="308" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="9VF-tY-EXD" kind="show" identifier="detailSegue" id="k69-q1-KN8"/>
-                                    <segue destination="ynU-Ck-i79" kind="presentation" identifier="infoSegue" trigger="accessoryAction" id="oPQ-zd-zUM"/>
+                                    <segue destination="ynU-Ck-i79" kind="show" identifier="infoSegue" trigger="accessoryAction" id="Qyi-wU-7xd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,9 +54,37 @@
                     <view key="view" contentMode="scaleToFill" id="TL6-cR-Fgr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pt-h9-5x0">
+                                <rect key="frame" x="166" y="64" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whG-ho-Z7Y">
+                                <rect key="frame" x="16" y="85" width="343" height="582"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Kri-5S-enR">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kri-5S-enR" firstAttribute="centerX" secondItem="TL6-cR-Fgr" secondAttribute="centerX" id="936-Ma-pXK"/>
+                            <constraint firstItem="whG-ho-Z7Y" firstAttribute="top" secondItem="5pt-h9-5x0" secondAttribute="bottom" id="DiT-fk-ITi"/>
+                            <constraint firstItem="5pt-h9-5x0" firstAttribute="top" secondItem="rH8-FO-EDT" secondAttribute="bottom" id="Omx-Jx-PvD"/>
+                            <constraint firstItem="whG-ho-Z7Y" firstAttribute="trailing" secondItem="TL6-cR-Fgr" secondAttribute="trailingMargin" id="hwM-mB-tBe"/>
+                            <constraint firstItem="fr8-sP-fil" firstAttribute="top" secondItem="whG-ho-Z7Y" secondAttribute="bottom" id="j8K-aw-ICL"/>
+                            <constraint firstItem="Kri-5S-enR" firstAttribute="centerY" secondItem="TL6-cR-Fgr" secondAttribute="centerY" id="kh4-Hr-ppp"/>
+                            <constraint firstItem="5pt-h9-5x0" firstAttribute="centerX" secondItem="TL6-cR-Fgr" secondAttribute="centerX" id="ri0-Da-XKG"/>
+                            <constraint firstItem="whG-ho-Z7Y" firstAttribute="leading" secondItem="TL6-cR-Fgr" secondAttribute="leadingMargin" id="t4m-wr-8Rz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="sxX-8M-zYe"/>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="5pt-h9-5x0" id="uva-Dq-Sg2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Al1-wJ-j1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

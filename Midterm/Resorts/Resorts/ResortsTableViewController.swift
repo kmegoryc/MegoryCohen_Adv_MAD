@@ -12,6 +12,7 @@ class ResortsTableViewController: UITableViewController {
     
     //make instance of resorts
     var resortList = Resorts()
+    var resortURLs = ["https://www.aspensnowmass.com/", "https://www.eldora.com/", "https://www.steamboat.com/", "https://www.snow.com/"]
     
     let kfilename = "resortsinfo.plist"
     
@@ -114,11 +115,16 @@ class ResortsTableViewController: UITableViewController {
         //for detail disclosure
         if segue.identifier == "infoSegue" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let name = resortList.resorts[indexPath.row]
-                //let url = resort["url"]! as String
+                let resort = resortList.resorts[indexPath.row]
+                let url = resortURLs[indexPath.row]
+                print(resort)
+                print(url)
+                //let name = resortList.resorts["name"]! as String
                 let controller = (segue.destination as! UINavigationController).topViewController as! ResortInfoViewController
-                //controller.detailItem = url as AnyObject?
-                controller.title = name
+                controller.detailItem = url as AnyObject?
+                controller.title = resort
+                //controller.navigationItem.leftBarButtonItem = self.displayModeButtonItem
+                //controller.navigationItem.leftItemsSupplementBackButton = true
                 //controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem
                 //controller.navigationItem.leftItemsSupplementBackButton = true
             }
