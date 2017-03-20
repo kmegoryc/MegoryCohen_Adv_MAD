@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="xxr-en-Zow">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="768"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sexed" translatesAutoresizingMaskIntoConstraints="NO" id="pce-IU-ali">
+                                <rect key="frame" x="362" y="234" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7Zc-sJ-vb7"/>
+                                    <constraint firstAttribute="height" constant="300" id="9Ns-Aq-WMg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xxr-en-Zow" secondAttribute="trailing" constant="-20" id="Edq-GO-DiF"/>
+                            <constraint firstItem="xxr-en-Zow" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="HJV-At-qf9"/>
+                            <constraint firstItem="xxr-en-Zow" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="Oq1-sZ-ScG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="xxr-en-Zow" secondAttribute="bottom" constant="-20" id="YVX-PP-55u"/>
+                            <constraint firstItem="pce-IU-ali" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gqQ-bj-jvC"/>
+                            <constraint firstItem="pce-IU-ali" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rae-E8-wWF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1680" height="1050"/>
+        <image name="sexed" width="2500" height="2500"/>
+    </resources>
+</document>

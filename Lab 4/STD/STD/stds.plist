@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>types</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>Trichomoniasis (Trich)</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/trichomoniasis</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Scabies</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/scabies</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Syphilis</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/syphilis</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Molluscum Contagiosum</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/molluscum-contagiosum</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Pelvic Inflammatory Disease (PID)</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/pelvic-inflammatory-disease-pid</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Pubic Lice (Crabs)</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/pubic-lice</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>HIV &amp; AIDS</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/hiv-aids</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Human Papillomavirus (HPV)</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/hpv</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Chancroid</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Chlamydia</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/chlamydia</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Genital Warts</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/genital-warts</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Gonorrhea</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/gonorrhea</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Hepatitis B</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/hepatitis-b</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Oral &amp; Genital Herpes</string>
+			<key>url</key>
+			<string>https://www.plannedparenthood.org/learn/stds-hiv-safer-sex/herpes</string>
+		</dict>
+	</array>
+</dict>
+</plist>
