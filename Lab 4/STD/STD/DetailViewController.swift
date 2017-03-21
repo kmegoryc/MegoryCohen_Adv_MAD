@@ -14,19 +14,16 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var webSpinner: UIActivityIndicatorView!
     
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
+    var detailItem: AnyObject?
     
     //UIWebViewDelegate method that is called when a web page begins to load
-    func webViewDidStartLoad(_ webView: UIWebView) { webSpinner.startAnimating()
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        webSpinner.startAnimating()
     }
     
     //UIWebViewDelegate method that is called when a web page loads successfully
-    func webViewDidFinishLoad(_ webView: UIWebView) { webSpinner.stopAnimating()
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webSpinner.stopAnimating()
     }
 
 
@@ -52,6 +49,7 @@ class DetailViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //webView.delegate=self
         self.configureView()
     }
 

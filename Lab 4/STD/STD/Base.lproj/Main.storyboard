@@ -49,14 +49,19 @@
                                 <rect key="frame" x="16" y="81" width="343" height="586"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="delegate" destination="svH-Pt-448" id="EkJ-ts-vXD"/>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="XUC-WA-pxF"/>
                                 </connections>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jZk-eU-vJj">
+                                <rect key="frame" x="177" y="364" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="jZk-eU-vJj" firstAttribute="centerY" secondItem="BnM-8M-vF5" secondAttribute="centerY" id="95j-51-kB0"/>
                             <constraint firstItem="BnM-8M-vF5" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leadingMargin" id="MT4-Gs-duw"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="Y3K-gz-Bn8"/>
+                            <constraint firstItem="jZk-eU-vJj" firstAttribute="centerX" secondItem="BnM-8M-vF5" secondAttribute="centerX" id="afW-Yk-qBn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BnM-8M-vF5" secondAttribute="trailing" id="ayW-Oz-sQV"/>
                             <constraint firstItem="GAO-Cl-Wes" firstAttribute="top" secondItem="BnM-8M-vF5" secondAttribute="bottom" id="cdR-zK-nzW"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="SYR-Wa-9uf" secondAttribute="bottom" id="lRC-qx-oLF"/>
@@ -67,6 +72,7 @@
                     <navigationItem key="navigationItem" prompt="" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="webSpinner" destination="jZk-eU-vJj" id="Sis-RF-WJv"/>
                         <outlet property="webView" destination="BnM-8M-vF5" id="DK6-tT-azw"/>
                     </connections>
                 </viewController>
@@ -101,11 +107,11 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
