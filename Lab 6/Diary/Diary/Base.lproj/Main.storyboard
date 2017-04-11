@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sIc-qg-h83">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UTU-6q-KNN">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -272,6 +272,50 @@
             </objects>
             <point key="canvasLocation" x="1008.8" y="122.78860569715144"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="oPh-dC-r4z">
+            <objects>
+                <viewController id="UTU-6q-KNN" customClass="LoginViewController" customModule="Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2S9-wp-vRr"/>
+                        <viewControllerLayoutGuide type="bottom" id="hrh-pq-KAj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZRc-27-t5G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lga-zK-97j" customClass="GIDSignInButton">
+                                <rect key="frame" x="40" y="234" width="240" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Scz-Ei-dm9"/>
+                                    <constraint firstAttribute="height" constant="100" id="l6W-qd-fvQ"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lmi-Yf-Ouj">
+                                <rect key="frame" x="110" y="90" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3fV-Sk-5Px"/>
+                                    <constraint firstAttribute="width" constant="100" id="y8f-4Y-Uvx"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lmi-Yf-Ouj" firstAttribute="top" secondItem="2S9-wp-vRr" secondAttribute="bottom" constant="70" id="1FM-cd-Bv8"/>
+                            <constraint firstItem="lga-zK-97j" firstAttribute="centerX" secondItem="ZRc-27-t5G" secondAttribute="centerX" id="F6T-Mh-33e"/>
+                            <constraint firstItem="lga-zK-97j" firstAttribute="centerY" secondItem="ZRc-27-t5G" secondAttribute="centerY" id="Qc1-T8-OXA"/>
+                            <constraint firstItem="Lmi-Yf-Ouj" firstAttribute="centerX" secondItem="ZRc-27-t5G" secondAttribute="centerX" id="WMa-3O-WcP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="sIc-qg-h83" kind="presentation" identifier="showData" id="4ag-gt-Ssj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfj-a7-90M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="123"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="uz4-WO-be4">
             <objects>
@@ -291,4 +335,7 @@
             <point key="canvasLocation" x="2631" y="123"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="256" height="256"/>
+    </resources>
 </document>

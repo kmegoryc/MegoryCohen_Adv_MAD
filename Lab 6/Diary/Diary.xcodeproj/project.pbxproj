@@ -18,6 +18,7 @@
 		2695CFC81E9D51F20002CB31 /* DiaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2695CFC71E9D51F20002CB31 /* DiaryUITests.swift */; };
 		2695CFD61E9D525A0002CB31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2695CFD51E9D525A0002CB31 /* GoogleService-Info.plist */; };
 		26D5B5541E9D642D00E3EC91 /* ViewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5B5531E9D642D00E3EC91 /* ViewEntryViewController.swift */; };
+		26D5B5571E9D72EB00E3EC91 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D5B5561E9D72EB00E3EC91 /* LoginViewController.swift */; };
 		60C44A3AAB0F138122E0F4C2 /* Pods_Diary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8E63E3F4D11C1AA535AF63 /* Pods_Diary.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,8 @@
 		2695CFC91E9D51F20002CB31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2695CFD51E9D525A0002CB31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		26D5B5531E9D642D00E3EC91 /* ViewEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewEntryViewController.swift; sourceTree = "<group>"; };
+		26D5B5551E9D729700E3EC91 /* Diary–Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Diary–Bridging-Header.h"; sourceTree = "<group>"; };
+		26D5B5561E9D72EB00E3EC91 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6F3953A384B7B9DF116AE546 /* Pods-Diary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.debug.xcconfig"; sourceTree = "<group>"; };
 		700099BE9282B4965D232885 /* Pods-Diary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diary.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diary/Pods-Diary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				2695CFA71E9D51F10002CB31 /* AppDelegate.swift */,
+				26D5B5561E9D72EB00E3EC91 /* LoginViewController.swift */,
+				26D5B5551E9D729700E3EC91 /* Diary–Bridging-Header.h */,
 				2695CFAB1E9D51F10002CB31 /* Main.storyboard */,
 				26D5B5531E9D642D00E3EC91 /* ViewEntryViewController.swift */,
 				2644C6471E9D540600D57B29 /* MasterTableViewController.swift */,
@@ -347,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D5B5571E9D72EB00E3EC91 /* LoginViewController.swift in Sources */,
 				2644C64C1E9D54FD00D57B29 /* Entry.swift in Sources */,
 				2644C64A1E9D544800D57B29 /* AddEntryViewController.swift in Sources */,
 				2695CFA81E9D51F10002CB31 /* AppDelegate.swift in Sources */,
