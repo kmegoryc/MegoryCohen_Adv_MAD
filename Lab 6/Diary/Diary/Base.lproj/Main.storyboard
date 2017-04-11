@@ -169,7 +169,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="V1R-Ml-yVg">
-                                <rect key="frame" x="40" y="70.5" width="240" height="447"/>
+                                <rect key="frame" x="40" y="71" width="240" height="447"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Tdl-NS-HLj" userLabel="Summary">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="129"/>
@@ -180,16 +180,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sid-uW-Uue">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bLv-LC-qIw">
                                                 <rect key="frame" x="0.0" y="29" width="240" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="240" id="Oij-Jp-nGX"/>
-                                                    <constraint firstAttribute="height" constant="100" id="ZXx-sU-w0n"/>
+                                                    <constraint firstAttribute="width" constant="240" id="T5L-VI-ysJ"/>
+                                                    <constraint firstAttribute="height" constant="100" id="agr-g6-bDB"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="RR6-VM-ajg" userLabel="Highlight">
@@ -201,16 +201,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA8-cM-nky">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Wz-FA-ocz">
                                                 <rect key="frame" x="0.0" y="29" width="240" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="dYn-kh-6EC"/>
-                                                    <constraint firstAttribute="width" constant="240" id="leF-Sh-x56"/>
+                                                    <constraint firstAttribute="height" constant="100" id="hY6-ug-1b0"/>
+                                                    <constraint firstAttribute="width" constant="240" id="kj4-dc-afO"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8sY-NH-QWN" userLabel="Lowlight">
@@ -222,16 +222,16 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85J-9B-esW">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5fd-5L-dK2">
                                                 <rect key="frame" x="0.0" y="29" width="240" height="100"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="240" id="pmM-ii-rcd"/>
-                                                    <constraint firstAttribute="height" constant="100" id="uOk-Zl-Vjz"/>
+                                                    <constraint firstAttribute="height" constant="100" id="eMY-tk-IdD"/>
+                                                    <constraint firstAttribute="width" constant="240" id="rrZ-bz-D7K"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -245,9 +245,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="2tN-bV-fRF"/>
                     <connections>
-                        <outlet property="highlightLabel" destination="FA8-cM-nky" id="5y3-9L-RaF"/>
-                        <outlet property="lowlightLabel" destination="85J-9B-esW" id="zfL-Xh-3bx"/>
-                        <outlet property="summaryLabel" destination="Sid-uW-Uue" id="BK5-9U-Syw"/>
+                        <outlet property="highlightText" destination="6Wz-FA-ocz" id="Sj5-xk-ReT"/>
+                        <outlet property="lowlightText" destination="5fd-5L-dK2" id="ZkQ-Ag-9CW"/>
+                        <outlet property="summaryText" destination="bLv-LC-qIw" id="BSF-Ry-NBh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6G-ho-gqL" userLabel="First Responder" sceneMemberID="firstResponder"/>

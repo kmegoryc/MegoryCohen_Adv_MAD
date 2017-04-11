@@ -13,9 +13,10 @@ class ViewEntryViewController: UIViewController {
     var highlight = String()
     var lowlight = String()
 
-    @IBOutlet weak var summaryLabel: UILabel!
-    @IBOutlet weak var highlightLabel: UILabel!
-    @IBOutlet weak var lowlightLabel: UILabel!
+    @IBOutlet weak var summaryText: UITextView!
+    @IBOutlet weak var highlightText: UITextView!
+    @IBOutlet weak var lowlightText: UITextView!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,9 @@ class ViewEntryViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        summaryLabel.text = summary
-        highlightLabel.text = highlight
-        lowlightLabel.text = lowlight
+        summaryText.text = summary
+        highlightText.text = highlight
+        lowlightText.text = lowlight
     }
 
     override func didReceiveMemoryWarning() {
