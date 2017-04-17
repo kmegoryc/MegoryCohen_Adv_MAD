@@ -1,0 +1,11 @@
+<resources>
+	<string name="app_name">Brain Anatomy</string>
+	<string name="brain">brain</string>
+	<string-array name="lobes">
+		<item>Frontal</item>
+		<item>Parietal</item>
+		<item>Occipital</item>
+		<item>Temporal</item>
+	</string-array>
+	<string name="create_order">Order</string>
+</resources>
