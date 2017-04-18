@@ -20,16 +20,16 @@ public class StructureActivity extends Activity {
         Structure structure;
         //set correct structure instance based on
         switch(structureType){
-            case "Frontal":
+            case "Frontal Lobe":
                 structure = Structure.frontal[structureID];
                 break;
-            case "Parietal":
+            case "Parietal Lobe":
                 structure = Structure.parietal[structureID];
                 break;
-            case "Occipital":
+            case "Occipital Lobe":
                 structure = Structure.occipital[structureID];
                 break;
-            case "Temporal":
+            case "Temporal Lobe":
                 structure = Structure.temporal[structureID];
                 break;
             default:

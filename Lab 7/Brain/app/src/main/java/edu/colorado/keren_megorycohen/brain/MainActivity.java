@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         switch (item.getItemId()){
             case R.id.create_order:
                 //start order activity
-                Intent intent = new Intent(this, OrderActivity.class);
+                Intent intent = new Intent(this, LearnActivity.class);
                 startActivity(intent);
                 return true;
             default:

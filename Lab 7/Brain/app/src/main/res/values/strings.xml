@@ -2,10 +2,10 @@
 	<string name="app_name">Brain Anatomy</string>
 	<string name="brain">brain</string>
 	<string-array name="lobes">
-		<item>Frontal</item>
-		<item>Parietal</item>
-		<item>Occipital</item>
-		<item>Temporal</item>
+		<item>Frontal Lobe</item>
+		<item>Parietal Lobe</item>
+		<item>Occipital Lobe</item>
+		<item>Temporal Lobe</item>
 	</string-array>
 	<string name="create_order">Order</string>
 </resources>

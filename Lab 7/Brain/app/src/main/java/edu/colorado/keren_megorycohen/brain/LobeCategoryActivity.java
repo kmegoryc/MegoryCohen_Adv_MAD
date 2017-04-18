@@ -27,16 +27,16 @@ public class LobeCategoryActivity extends ListActivity {
 
         //initialize the array adapter with the list of lobes
         switch(lobe_name){
-            case "Frontal":
+            case "Frontal Lobe":
                 listAdapter = new ArrayAdapter<Structure>(this, android.R.layout.simple_list_item_1, Structure.frontal);
                 break;
-            case "Parietal":
+            case "Parietal Lobe":
                 listAdapter = new ArrayAdapter<Structure>(this, android.R.layout.simple_list_item_1, Structure.parietal);
                 break;
-            case "Occipital":
+            case "Occipital Lobe":
                 listAdapter = new ArrayAdapter<Structure>(this, android.R.layout.simple_list_item_1, Structure.occipital);
                 break;
-            case "Temporal":
+            case "Temporal Lobe":
                 listAdapter = new ArrayAdapter<Structure>(this, android.R.layout.simple_list_item_1, Structure.temporal);
                 break;
             default:
