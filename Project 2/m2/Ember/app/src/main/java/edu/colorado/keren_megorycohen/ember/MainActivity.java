@@ -122,9 +122,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    Overview overview = new Overview();
+                    return overview;
+                case 1:
+                    Health health = new Health();
+                    return health;
+                case 2:
+                    Progress progress = new Progress();
+                    return progress;
+            }
+            return null;
         }
 
         @Override
@@ -137,11 +146,11 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Overview";
                 case 1:
-                    return "SECTION 2";
+                    return "Health";
                 case 2:
-                    return "SECTION 3";
+                    return "Progress";
             }
             return null;
         }
