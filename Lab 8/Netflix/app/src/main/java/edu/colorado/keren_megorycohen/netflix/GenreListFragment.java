@@ -34,7 +34,8 @@ public class GenreListFragment extends Fragment implements AdapterView.OnItemCli
     @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id){
         if (listener != null){
         //tells the listener an item was clicked
-        listener.itemClicked(id); }
+        listener.itemClicked(id);
+        }
     }
 
     public GenreListFragment() {

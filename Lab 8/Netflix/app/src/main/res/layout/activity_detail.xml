@@ -7,4 +7,14 @@
 	android:layout_height="match_parent"
 	tools:context="edu.colorado.keren_megorycohen.netflix.DetailActivity">
 
+	<fragment
+		android:id="@+id/fragment_container"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		class="edu.colorado.keren_megorycohen.netflix.MovieListFragment"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		tools:layout="@layout/fragment_movie_list"/>
+
 </android.support.constraint.ConstraintLayout>
