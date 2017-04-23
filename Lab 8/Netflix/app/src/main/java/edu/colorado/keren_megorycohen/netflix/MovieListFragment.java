@@ -65,6 +65,23 @@ public class MovieListFragment extends Fragment implements View.OnClickListener{
             genreId = savedInstanceState.getLong("genreId");
         }
 
+        //if the hero list is empty, load heroes
+        if (Genre.netflix[0].getMovies().size() == 0 ) {
+            Genre.netflix[0].loadMovies(getActivity(), 0);
+        }
+        if (Genre.netflix[1].getMovies().size() == 0 ) {
+            Genre.netflix[1].loadMovies(getActivity(), 1);
+        }
+        if (Genre.netflix[2].getMovies().size() == 0 ) {
+            Genre.netflix[2].loadMovies(getActivity(), 2);
+        }
+        if (Genre.netflix[3].getMovies().size() == 0 ) {
+            Genre.netflix[3].loadMovies(getActivity(), 3);
+        }
+        if (Genre.netflix[4].getMovies().size() == 0 ) {
+            Genre.netflix[4].loadMovies(getActivity(), 4);
+        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_movie_list, container, false);
     }
@@ -122,6 +139,7 @@ public class MovieListFragment extends Fragment implements View.OnClickListener{
             Genre.netflix[(int) genreId].getMovies().remove(info.position);
             //refresh the list view
             MovieListFragment.this.adapter.notifyDataSetChanged();
+            Genre.netflix[(int) genreId].storeHeroes(getActivity(), genreId);
         }
         return true;
     }
@@ -140,6 +158,7 @@ public class MovieListFragment extends Fragment implements View.OnClickListener{
                 // add movie
                 Genre.netflix[(int) genreId].getMovies().add(movieName);
                 MovieListFragment.this.adapter.notifyDataSetChanged();
+                Genre.netflix[(int) genreId].storeHeroes(getActivity(), genreId);
                 dialog.dismiss();
             }
         });
