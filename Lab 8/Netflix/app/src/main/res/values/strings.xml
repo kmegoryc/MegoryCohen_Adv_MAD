@@ -1,0 +1,7 @@
+<resources>
+	<string name="app_name">Netflix</string>
+	<string name="netflix_image">Netflix Image</string>
+
+	<string name="add_movie_hint">Movie Name</string>
+	<string name="add_dialog_title">Add Movie</string>
+</resources>
