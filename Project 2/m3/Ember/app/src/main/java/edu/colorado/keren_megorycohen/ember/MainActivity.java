@@ -22,17 +22,6 @@ import static edu.colorado.keren_megorycohen.ember.Day.alldata;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*//create an array (global variable) of Day type elements (with test data)
-    ArrayList<Day> alldata = new ArrayList<Day>(){
-        {
-            add(new Day(20, 19, 19, 4, 2017));
-            add(new Day(20, 18, 20, 4, 2017));
-            add(new Day(20, 20, 21, 4, 2017));
-            add(new Day(20, 22, 22, 4, 2017));
-            add(new Day(20, 10, 23, 4, 2017));
-        }
-    };*/
-
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -71,9 +60,6 @@ public class MainActivity extends AppCompatActivity {
         int day_of_month = rightNow.get(Calendar.DAY_OF_MONTH);
         int month = rightNow.get(Calendar.MONTH) + 1;
         int year = rightNow.get(Calendar.YEAR);
-        //Log.e("time", String.valueOf(day_of_month));
-        ///Log.e("time", String.valueOf(month));
-        //Log.e("time", String.valueOf(year));
 
         //store today's data
         Day today = new Day(20, 0, day_of_month, month, year);

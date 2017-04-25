@@ -33,13 +33,27 @@ public class Day {
     //create a public array of Day type elements (with test data)
     public static final ArrayList<Day> alldata = new ArrayList<Day>(){
         {
-            add(new Day(20, 19, 19, 4, 2017));
-            add(new Day(20, 18, 20, 4, 2017));
-            add(new Day(20, 20, 21, 4, 2017));
-            add(new Day(20, 22, 22, 4, 2017));
-            add(new Day(20, 10, 23, 4, 2017));
+            add(new Day(20, 16, 19, 4, 2017));
+            add(new Day(20, 19, 20, 4, 2017));
+            add(new Day(20, 18, 21, 4, 2017));
+            add(new Day(20, 20, 22, 4, 2017));
+            add(new Day(20, 22, 23, 4, 2017));
+            add(new Day(20, 10, 24, 4, 2017));
         }
     };
+
+    /*public void storeDays(Context context, int day){
+        //get access to a shared preferences file
+        SharedPreferences sharedPrefs = context.getSharedPreferences("days", Context.MODE_PRIVATE);
+        //create an editor to write to the shared preferences file
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        //create a set
+        Set<Day> set = new HashSet<Day>();
+        //add day to the set
+        set.add(alldata.get(day));
+        //save changes
+        editor.commit();
+    }*/
 
     public int getLimit() {
         return limit;
@@ -65,6 +79,39 @@ public class Day {
 
     public int getMonth() {
         return month;
+    }
+
+    public String getMonthString(){
+        switch(month){
+            case 1:
+                return "January";
+            case 2:
+                return "February";
+            case 3:
+                return "March";
+            case 4:
+                return "April";
+            case 5:
+                return "May";
+            case 6:
+                return "June";
+            case 7:
+                return "July";
+            case 8:
+                return "August";
+            case 9:
+                return "September";
+            case 10:
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
+            default:
+                return "Error";
+
+        }
+
     }
 
     public int getYear() {

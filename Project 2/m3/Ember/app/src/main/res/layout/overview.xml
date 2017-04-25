@@ -168,7 +168,7 @@
 				android:textColor="#fff"/>
 
 			<TextView
-				android:id="@+id/date"
+				android:id="@+id/last_cigarette"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="20dp"
@@ -178,7 +178,7 @@
 				android:textColor="#fff"/>
 
 			<TextView
-				android:id="@+id/date"
+				android:id="@+id/avg_daily_intake"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="20dp"
@@ -188,7 +188,7 @@
 				android:textColor="#fff"/>
 
 			<TextView
-				android:id="@+id/date"
+				android:id="@+id/money_saved"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_marginStart="20dp"

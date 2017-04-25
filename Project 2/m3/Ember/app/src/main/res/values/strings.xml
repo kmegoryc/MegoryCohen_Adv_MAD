@@ -11,4 +11,6 @@
 	<string name="smoked_label">Smoked</string>
 	<string name="remaining_label">Remaining</string>
 
+	<string name="graph_title">Cigarettes Smoked (Last 7 Days)</string>
+
 </resources>
