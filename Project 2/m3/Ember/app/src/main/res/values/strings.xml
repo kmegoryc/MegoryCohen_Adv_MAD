@@ -5,7 +5,8 @@
 	<string name="section_format">Hello World from section: %1$d</string>
 
 	<string name="equals">=</string>
-	<string name="minus">–</string>
+	<string name="minus">-</string>
+	<string name="plus">+</string>
 	<string name="limit_label">Limit</string>
 	<string name="smoked_label">Smoked</string>
 	<string name="remaining_label">Remaining</string>

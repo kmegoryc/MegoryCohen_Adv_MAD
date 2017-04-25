@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<!--<ScrollView
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="edu.colorado.keren_megorycohen.ember.Overview"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:fillViewport="true">
+	android:fillViewport="true">-->
 
 	<RelativeLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content">
+		xmlns:tools="http://schemas.android.com/tools"
+		tools:context="edu.colorado.keren_megorycohen.ember.Overview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
 
 		<LinearLayout
 			android:id="@+id/overview"
@@ -57,8 +61,8 @@
 				android:layout_weight="1"
 				android:gravity="center_horizontal"
 				android:textStyle="bold"
-				android:textSize="18sp"
-				android:text="@string/minus"/>
+				android:text="@string/minus"
+				android:textSize="18sp"/>
 
 			<LinearLayout
 				android:id="@+id/smoked_layout"
@@ -140,6 +144,84 @@
 			android:layout_centerHorizontal="true"
 			android:layout_marginTop="20dp"/>
 
+		<LinearLayout
+			android:id="@+id/content"
+			android:background="@color/gray"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/progressBar"
+			android:layout_alignParentBottom="true"
+			android:layout_marginTop="10dp"
+			android:layout_centerVertical="true"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/date"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:layout_marginStart="20dp"
+				android:layout_marginBottom="20dp"
+				android:textSize="15sp"
+				android:textStyle="bold|italic"
+				android:text="Date"
+				android:textColor="#fff"/>
+
+			<TextView
+				android:id="@+id/date"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:textSize="13sp"
+				android:layout_weight="1"
+				android:text="last cigarette"
+				android:textColor="#fff"/>
+
+			<TextView
+				android:id="@+id/date"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:textSize="13sp"
+				android:layout_weight="1"
+				android:text="average daily intake"
+				android:textColor="#fff"/>
+
+			<TextView
+				android:id="@+id/date"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="20dp"
+				android:textSize="13sp"
+				android:layout_weight="1"
+				android:text="money saved"
+				android:textColor="#fff"/>
+
+			<TextView
+				android:id="@+id/end"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:layout_marginStart="20dp"
+				android:layout_marginBottom="10dp"
+				android:textSize="15sp"
+				android:textColor="#fff"/>
+
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/button"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="80dp"
+			android:layout_marginEnd="20dp"
+			android:background="@drawable/round_button"
+			android:text="@string/plus"
+			android:textSize="20sp"
+			android:textColor="#fff"/>
 
 	</RelativeLayout>
-</ScrollView>
+<!--
+</ScrollView>-->
