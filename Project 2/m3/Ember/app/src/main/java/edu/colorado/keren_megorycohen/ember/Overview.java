@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 import static edu.colorado.keren_megorycohen.ember.Day.alldata;
+import static edu.colorado.keren_megorycohen.ember.Time.time;
 
 /*
  * Created by kerenmegory-cohen on 4/17/17.
@@ -23,7 +24,7 @@ import static edu.colorado.keren_megorycohen.ember.Day.alldata;
 public class Overview extends Fragment {
 
     //global calendar variable
-    Calendar timeAtLast = Calendar.getInstance();
+    Calendar atLast = Calendar.getInstance();
 
     double packCost = 5.51;
     double packSize = 20;
@@ -80,7 +81,7 @@ public class Overview extends Fragment {
         alldata.get(alldata.size()-1).updateSmoked();
 
         //store current time (time at last cigarette)
-        timeAtLast = Calendar.getInstance();
+        atLast = Calendar.getInstance();
 
         //update overview values
         updateOverview(view);
@@ -112,11 +113,14 @@ public class Overview extends Fragment {
 
         //time since last cigarette = current time - time at last cigarette
         Calendar currentTime = Calendar.getInstance();
-        long diff = currentTime.getTimeInMillis() - timeAtLast.getTimeInMillis();
+        long diff = currentTime.getTimeInMillis() - atLast.getTimeInMillis();
 
+        long seconds = diff / 1000;
         long minutes = diff / (1000 * 60);
         long hours = diff / (1000 * 60 * 60);
         long days = diff / (24 * 60 * 60 * 1000);
+
+        time.setTimeSinceLast((int) seconds);
 
         //set stats text
         TextView last_cigarette = (TextView) view.findViewById(R.id.last_cigarette);
