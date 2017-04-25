@@ -121,6 +121,7 @@ public class Overview extends Fragment {
         long days = diff / (24 * 60 * 60 * 1000);
 
         time.setTimeSinceLast((int) seconds);
+        //time.setTimeSinceLast(604800);
 
         //set stats text
         TextView last_cigarette = (TextView) view.findViewById(R.id.last_cigarette);

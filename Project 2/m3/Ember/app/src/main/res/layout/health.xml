@@ -15,13 +15,11 @@
 
 	<LinearLayout
 		android:id="@+id/health"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:layout_alignParentTop="true"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
 		android:layout_marginTop="20dp"
 		android:layout_marginLeft="20dp"
 		android:layout_marginRight="20dp"
-		android:layout_centerVertical="true"
 		android:orientation="vertical">
 
 		<TextView
@@ -161,7 +159,7 @@
 			android:layout_marginBottom="5dp"
 			android:textSize="12sp"
 			android:textStyle="bold"
-			android:text="Heart Attack"/>
+			android:text="Stroke"/>
 
 		<TextView
 			android:id="@+id/stroke"
@@ -187,7 +185,7 @@
 			android:layout_marginBottom="5dp"
 			android:textSize="12sp"
 			android:textStyle="bold"
-			android:text="Heart Attack"/>
+			android:text="Lung Cancer"/>
 
 		<TextView
 			android:id="@+id/lung_cancer"
