@@ -9,6 +9,7 @@
 
 	<RelativeLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
 		tools:context="edu.colorado.keren_megorycohen.ember.Overview"
 		android:layout_width="match_parent"
@@ -151,8 +152,10 @@
 			android:layout_height="match_parent"
 			android:layout_below="@id/progressBar"
 			android:layout_alignParentBottom="true"
-			android:layout_marginTop="10dp"
+			android:layout_marginTop="5dp"
+			android:layout_gravity="center"
 			android:layout_centerVertical="true"
+			android:layout_centerHorizontal="true"
 			android:orientation="vertical">
 
 			<TextView
@@ -161,46 +164,54 @@
 				android:layout_height="wrap_content"
 				android:layout_marginTop="20dp"
 				android:layout_marginStart="20dp"
-				android:layout_marginBottom="20dp"
 				android:textSize="15sp"
-				android:textStyle="bold|italic"
+				android:textStyle="italic"
 				android:text="Date"
 				android:textColor="#fff"/>
 
 			<TextView
 				android:id="@+id/last_cigarette"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_height="40dp"
+				android:layout_marginTop="15dp"
 				android:layout_marginStart="20dp"
-				android:textSize="13sp"
-				android:layout_weight="1"
+				android:drawableStart="@drawable/calendar_draw"
+				android:drawablePadding="10dp"
 				android:text="last cigarette"
-				android:textColor="#fff"/>
+				android:textStyle="bold"
+				android:textColor="#fff"
+				android:textSize="13sp"/>
 
 			<TextView
 				android:id="@+id/avg_daily_intake"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_height="40dp"
+				android:layout_marginTop="20dp"
 				android:layout_marginStart="20dp"
-				android:textSize="13sp"
-				android:layout_weight="1"
+				android:drawableStart="@drawable/cigarette_draw"
+				android:drawablePadding="10dp"
 				android:text="average daily intake"
-				android:textColor="#fff"/>
+				android:textStyle="bold"
+				android:textColor="#fff"
+				android:textSize="13sp"/>
 
 			<TextView
 				android:id="@+id/money_saved"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_height="40dp"
+				android:layout_marginTop="20dp"
 				android:layout_marginStart="20dp"
-				android:textSize="13sp"
-				android:layout_weight="1"
+				android:drawableStart="@drawable/money_draw"
+				android:drawablePadding="10dp"
 				android:text="money saved"
-				android:textColor="#fff"/>
+				android:textStyle="bold"
+				android:textColor="#fff"
+				android:textSize="13sp"/>
 
 			<TextView
 				android:id="@+id/end"
 				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
+				android:layout_height="40dp"
 				android:layout_marginTop="10dp"
 				android:layout_marginStart="20dp"
 				android:layout_marginBottom="10dp"

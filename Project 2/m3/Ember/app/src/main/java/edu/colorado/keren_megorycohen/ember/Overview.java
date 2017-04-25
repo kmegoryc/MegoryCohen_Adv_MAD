@@ -25,6 +25,9 @@ public class Overview extends Fragment {
     //global calendar variable
     Calendar timeAtLast = Calendar.getInstance();
 
+    double packCost = 5.51;
+    double packSize = 20;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -60,11 +63,13 @@ public class Overview extends Fragment {
         //update average daily intake
         calcAndUpdateAvgDailyIntake(view);
 
-        //set progress bar
-        ProgressBar progress = (ProgressBar) view.findViewById(R.id.progressBar);
-        progress.setProgress(0);
-        //calculate percentage
-        progress.setProgress((alldata.get(alldata.size()-1).getSmoked()/alldata.get(alldata.size()-1).getLimit())*100);
+        //update money saved
+        calcAndUpdateMoneySaved(view);
+
+        //update progress bar
+        calcAndUpdateProgressBar(view);
+
+
     }
 
     public void addCigarette() {
@@ -79,6 +84,18 @@ public class Overview extends Fragment {
 
         //update overview values
         updateOverview(view);
+
+        //update time since last
+        calcAndUpdateTimeSinceLast(view);
+
+        //update average daily intake
+        calcAndUpdateAvgDailyIntake(view);
+
+        //update money saved
+        calcAndUpdateMoneySaved(view);
+
+        //update progress bar
+        calcAndUpdateProgressBar(view);
 
         //store all values
         /*for(int i = 0; i < alldata.size()-1; i++){
@@ -103,10 +120,11 @@ public class Overview extends Fragment {
 
         //set stats text
         TextView last_cigarette = (TextView) view.findViewById(R.id.last_cigarette);
-        last_cigarette.setText(String.valueOf(days) + "d " + String.valueOf(hours) + "h " + String.valueOf(minutes) + "m");
+        last_cigarette.setText("Last Cigarette\n" + String.valueOf(days) + "d " + String.valueOf(hours) + "h " + String.valueOf(minutes) + "m");
     }
 
     public void updateOverview(View view) {
+
         //define overview text
         TextView limit = (TextView) view.findViewById(R.id.limit);
         TextView smoked = (TextView) view.findViewById(R.id.smoked);
@@ -131,7 +149,39 @@ public class Overview extends Fragment {
 
         //set text
         TextView avg_daily_intake = (TextView) view.findViewById(R.id.avg_daily_intake);
-        avg_daily_intake.setText(String.valueOf(avg));
+        avg_daily_intake.setText("Average Daily Intake\n" + String.valueOf(avg));
+    }
+
+    public void calcAndUpdateMoneySaved(View view) {
+
+        //money saved = alldata.remaining * (packcost/packsize)
+
+        double remaining = 0;
+        double saved = 0;
+        for (int i = 0; i < alldata.size()-1; i++){
+            remaining = remaining + alldata.get(i).getRemaining();
+        }
+        saved = remaining * (packCost/packSize);
+
+        //set text
+        TextView money_saved = (TextView) view.findViewById(R.id.money_saved);
+        money_saved.setText("Money Saved\n" + "$" + String.format("%.2g%n", saved));
+    }
+
+    public void calcAndUpdateProgressBar(View view) {
+
+        //set progress bar
+        ProgressBar progress = (ProgressBar) view.findViewById(R.id.progressBar);
+
+        int smoked = alldata.get(alldata.size()-1).getSmoked();
+        int limit = alldata.get(alldata.size()-1).getLimit();
+        float result = (float) smoked/limit;
+        float finalresult = result*100;
+        Log.d("progress", String.valueOf(smoked));
+        Log.d("progress", String.valueOf(limit));
+        Log.d("progress", String.valueOf((float) smoked/limit));
+        //calculate percentage
+        progress.setProgress((int) finalresult);
     }
 }
 
