@@ -4,4 +4,5 @@
 		<item>Indoor</item>
 		<item>Outdoor</item>
 	</string-array>
+	<string name="create_order">Create Order</string>
 </resources>
