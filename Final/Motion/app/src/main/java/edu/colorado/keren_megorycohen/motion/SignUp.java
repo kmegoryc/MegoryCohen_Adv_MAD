@@ -3,7 +3,6 @@ package edu.colorado.keren_megorycohen.motion;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
-import android.webkit.WebView;
 
 public class SignUp extends Activity {
 
@@ -17,9 +16,6 @@ public class SignUp extends Activity {
 
         //enable the up button
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-        WebView myWebView = (WebView) findViewById(R.id.learnWebView);
-        myWebView.loadUrl("https://www.meetup.com/topics/excercise/");
 
     }
 }

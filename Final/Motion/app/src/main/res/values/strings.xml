@@ -5,4 +5,7 @@
 		<item>Outdoor</item>
 	</string-array>
 	<string name="create_order">Create Order</string>
+	<string name="name">Name</string>
+	<string name="event">Event</string>
+	<string name="sign_up">Sign Up</string>
 </resources>
