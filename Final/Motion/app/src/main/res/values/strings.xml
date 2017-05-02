@@ -1,0 +1,7 @@
+<resources>
+	<string name="app_name">Motion</string>
+	<string-array name="activities">
+		<item>Indoor</item>
+		<item>Outdoor</item>
+	</string-array>
+</resources>
