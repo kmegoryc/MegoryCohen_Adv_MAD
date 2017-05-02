@@ -14,17 +14,19 @@ public class Day {
     private int remaining;
 
     //date
+    private int day_of_year;
     private int day_of_month;
     private int month;
     private int year;
     private boolean current_added;
 
     //constructor
-    public Day(int new_limit, int new_smoked, int new_day_of_month, int new_month, int new_year){
+    public Day(int new_limit, int new_smoked, int new_day_of_year, int new_day_of_month, int new_month, int new_year){
         this.limit = new_limit;
         this.smoked = new_smoked; //initialize to 0 smoked
         this.remaining = new_limit - new_smoked; //initialize to limit remaining (limit - 0 = limit)
 
+        this.day_of_year = new_day_of_year;
         this.day_of_month = new_day_of_month;
         this.month = new_month;
         this.year = new_year;
@@ -33,12 +35,12 @@ public class Day {
     //create a public array of Day type elements (with test data)
     public static final ArrayList<Day> alldata = new ArrayList<Day>(){
         {
-            add(new Day(20, 16, 19, 4, 2017));
-            add(new Day(20, 19, 20, 4, 2017));
-            add(new Day(20, 18, 21, 4, 2017));
-            add(new Day(20, 20, 22, 4, 2017));
-            add(new Day(20, 22, 23, 4, 2017));
-            add(new Day(20, 10, 24, 4, 2017));
+            add(new Day(20, 16, 109, 19, 4, 2017));
+            add(new Day(20, 19, 110, 20, 4, 2017));
+            add(new Day(20, 18, 111, 21, 4, 2017));
+            add(new Day(20, 20, 112, 22, 4, 2017));
+            add(new Day(20, 22, 113, 23, 4, 2017));
+            add(new Day(20, 10, 114, 24, 4, 2017));
         }
     };
 
@@ -73,7 +75,11 @@ public class Day {
         return remaining;
     }
 
-    public int getDay_of_month(){
+    public int getDay_of_year() {
+        return day_of_year;
+    }
+
+    public int getDay_of_month() {
         return day_of_month;
     }
 

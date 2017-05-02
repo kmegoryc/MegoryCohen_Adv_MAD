@@ -57,12 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
         //check for current date
         Calendar rightNow = Calendar.getInstance();
+        int day_of_year = rightNow.get(Calendar.DAY_OF_YEAR);
         int day_of_month = rightNow.get(Calendar.DAY_OF_MONTH);
         int month = rightNow.get(Calendar.MONTH) + 1;
         int year = rightNow.get(Calendar.YEAR);
 
         //store today's data
-        Day today = new Day(20, 0, day_of_month, month, year);
+        Day today = new Day(20, 0, day_of_year, day_of_month, month, year);
 
         //only add today's object to alldata if it hasn't already
         if(!alldata.contains(today)) {
