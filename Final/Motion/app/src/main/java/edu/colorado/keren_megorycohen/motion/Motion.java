@@ -15,17 +15,17 @@ public class Motion {
     }
 
     public static final Motion[]outdoor = {
-            new Motion(R.drawable.cardio, "Snowboarding"),
-            new Motion(R.drawable.cardio, "Rock Climbing"),
-            new Motion(R.drawable.cardio, "Snowshoeing"),
-            new Motion(R.drawable.cardio, "Wake Boarding")
+            new Motion(R.drawable.snowboarding, "Snowboarding"),
+            new Motion(R.drawable.rockclimbing, "Rock Climbing"),
+            new Motion(R.drawable.snowshoeing, "Snowshoeing"),
+            new Motion(R.drawable.wakeboarding, "Wakeboarding")
     };
 
     public static final Motion[]indoor = {
-            new Motion(R.drawable.cardio, "Basketball"),
-            new Motion(R.drawable.cardio, "Gymnastics"),
-            new Motion(R.drawable.cardio, "Racketball"),
-            new Motion(R.drawable.cardio, "Volleyball")
+            new Motion(R.drawable.basketball, "Basketball"),
+            new Motion(R.drawable.gymnastics, "Gymnastics"),
+            new Motion(R.drawable.racketball, "Raquetball"),
+            new Motion(R.drawable.volleyball, "Volleyball")
     };
 
     public int getImageResourceID(){
