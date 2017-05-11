@@ -1,7 +1,7 @@
 package edu.colorado.keren_megorycohen.ember;
 
+
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,16 +11,18 @@ import android.widget.ProgressBar;
 
 import static edu.colorado.keren_megorycohen.ember.Time.time;
 
-/**
- * Created by kerenmegory-cohen on 4/17/17.
- */
-
 public class Health extends Fragment {
 
-    @Nullable
+
+    public Health() {
+        // Required empty public constructor
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.health, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_health, container, false);
     }
 
     @Override
@@ -81,8 +83,6 @@ public class Health extends Fragment {
         float result7 = (float) calc_time/tenYears;
         float finalresult7 = result7*100;
         lung_cancer.setProgress((int)finalresult7);
-
-
-
     }
+
 }

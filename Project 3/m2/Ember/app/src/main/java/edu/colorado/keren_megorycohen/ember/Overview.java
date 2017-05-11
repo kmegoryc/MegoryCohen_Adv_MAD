@@ -1,75 +1,220 @@
 package edu.colorado.keren_megorycohen.ember;
 
+
+import android.app.Dialog;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
 import static edu.colorado.keren_megorycohen.ember.Day.alldata;
 import static edu.colorado.keren_megorycohen.ember.Time.time;
 
-/*
- * Created by kerenmegory-cohen on 4/17/17.
- */
 
 public class Overview extends Fragment {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference ref = database.getReference();
 
     //global calendar variable
     Calendar atLast = Calendar.getInstance();
 
+    //check for current date
+    Calendar rightNow = Calendar.getInstance();
+    int day_of_year = rightNow.get(Calendar.DAY_OF_YEAR);
+    int day_of_month = rightNow.get(Calendar.DAY_OF_MONTH);
+    int month = rightNow.get(Calendar.MONTH) + 1;
+    int year = rightNow.get(Calendar.YEAR);
+
     double packCost = 5.51;
     double packSize = 20;
 
-    @Nullable
+    public Overview() {
+        // Required empty public constructor
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.overview, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_overview, container, false);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        View view = getView();
+        final View view = getView();
+
+        ValueEventListener firebaseListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+
+                //empty the array list
+                alldata.clear();
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+
+                    //create new Day object
+                    Day newDay = snapshot.getValue(Day.class);
+
+                    //add newDay to our array
+                    alldata.add(newDay);
+
+                    Log.d("firebase", "Value is: " + String.valueOf(newDay.getDay_of_year()));
+                }
+
+                //UPDATE ALL
+
+                //update overview
+                updateOverview(view);
+
+                //update time since last
+                calcAndUpdateTimeSinceLast(view);
+
+                //update average daily intake
+                calcAndUpdateAvgDailyIntake(view);
+
+                //update money saved
+                calcAndUpdateMoneySaved(view);
+
+                //update progress bar
+                calcAndUpdateProgressBar(view);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("firebase", "Failed to read value.", error.toException());
+            }
+
+        };
+
+        //add listener to our database reference
+        ref.addValueEventListener(firebaseListener);
+
+        //store today's data as new object
+        Day today = new Day(20, 0, day_of_year, day_of_month, month, year);
+
+        //there are previous days stored in alldata
+        if (alldata.size() != 0){
+
+            //if the current date has already been added
+            if(alldata.get(alldata.size()-1).getDay_of_year() == day_of_year){
+                Log.d("contains", "Today was already added to the array. Do nothing.");
+                Log.d("contains", "Array size: " + String.valueOf(alldata.size()));
+            }
+
+            //if the current date is new
+            else {
+                Log.d("contains", "Today not yet added. Adding it to the array.");
+                //add today to alldata array
+                alldata.add(today);
+                //add to Firebase
+                ref.child(String.valueOf(day_of_year)).setValue(today);
+                Log.d("contains", "Array size: " + String.valueOf(alldata.size()));
+            }
+
+        }
+
+        //array is empty
+        else {
+            Log.d("contains", "Today not found, because the array is empty. Adding it to the array.");
+            //add today to alldata array
+            alldata.add(today);
+            //add to Firebase
+            ref.child(String.valueOf(day_of_year)).setValue(today);
+            Log.d("contains", "Array size: " + String.valueOf(alldata.size()));
+        }
+
+        //print last item of array (today)
+        Log.d("alldata", "Before add: " + String.valueOf(alldata.get(alldata.size()-1).getLimit()));
+        Log.d("alldata", "Before add: " + String.valueOf(alldata.get(alldata.size()-1).getSmoked()));
+        Log.d("alldata", "Before add: " + String.valueOf(alldata.get(alldata.size()-1).getRemaining()));
 
         Button button = (Button) view.findViewById(R.id.button);
 
-        button.setOnClickListener(new OnClickListener()
+        button.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v)
             {
-                //call add cigarette function to update object
-                addCigarette();
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.dialog);
+                dialog.setTitle("Add Cigarette?");
+                dialog.setCancelable(true);
+                Button addbutton = (Button) dialog.findViewById(R.id.addButton);
+                Button cancelbutton = (Button) dialog.findViewById(R.id.cancelButton);
+                addbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //call add cigarette function to update object
+                        addCigarette();
+                        dialog.dismiss();
+                    }
+                });
+                cancelbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 
-        //update overview
-        updateOverview(view);
+        Button settings = (Button) view.findViewById(R.id.settings);
+        settings.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                final Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.settings);
+                dialog.setTitle("Settings");
+                dialog.setCancelable(true);
+                final EditText textlimit = (EditText) dialog.findViewById(R.id.editTextLimit);
+                final EditText textpackcost = (EditText) dialog.findViewById(R.id.packCost);
+                Button savebutton = (Button) dialog.findViewById(R.id.save);
+                savebutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //set new limit
+                        alldata.get(alldata.size()-1).setLimit(Integer.parseInt(textlimit.getText().toString()));
+                        //set new global pack cost
+                        packCost = Integer.parseInt(textpackcost.getText().toString());
+                        //update new limit to firebase
+                        ref.child(String.valueOf(day_of_year)).child("limit").setValue(alldata.get(alldata.size()-1).getLimit());
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+            }
+        });
 
         //set date
         TextView date = (TextView) view.findViewById(R.id.date);
         date.setText(String.valueOf(alldata.get(alldata.size()-1).getMonth()) + "/" + String.valueOf(alldata.get(alldata.size()-1).getDay_of_month()) + "/" + String.valueOf(alldata.get(alldata.size()-1).getYear()));
 
-        //update time since last
-        calcAndUpdateTimeSinceLast(view);
-
-        //update average daily intake
-        calcAndUpdateAvgDailyIntake(view);
-
-        //update money saved
-        calcAndUpdateMoneySaved(view);
-
-        //update progress bar
-        calcAndUpdateProgressBar(view);
-
+        //read data
+        for (int i = alldata.size()-1; i >= 0; i--) {
+            Log.d("alldata", "Value at index " + i + ": " + String.valueOf(alldata.get(i).getDay_of_month()) + "/" + String.valueOf(alldata.get(i).getMonthString()));
+            Log.d("alldata", "Smoked at index " + i + ": " + String.valueOf(alldata.get(i).getSmoked()));
+            Log.d("alldata", "Remaining at index " + i + ": " + String.valueOf(alldata.get(i).getRemaining()));
+        }
 
     }
 
@@ -80,33 +225,17 @@ public class Overview extends Fragment {
         //update smoked value
         alldata.get(alldata.size()-1).updateSmoked();
 
+        //update to firebase
+        ref.child(String.valueOf(day_of_year)).child("smoked").setValue(alldata.get(alldata.size()-1).getSmoked());
+        ref.child(String.valueOf(day_of_year)).child("remaining").setValue(alldata.get(alldata.size()-1).getRemaining());
+
         //store current time (time at last cigarette)
         atLast = Calendar.getInstance();
 
-        //update overview values
-        updateOverview(view);
-
-        //update time since last
-        calcAndUpdateTimeSinceLast(view);
-
-        //update average daily intake
-        calcAndUpdateAvgDailyIntake(view);
-
-        //update money saved
-        calcAndUpdateMoneySaved(view);
-
-        //update progress bar
-        calcAndUpdateProgressBar(view);
-
-        //store all values
-        /*for(int i = 0; i < alldata.size()-1; i++){
-            alldata.get(i).storeDays(getActivity(), alldata.size()-1);
-        }*/
-
         //print last item of array (should be today)
-        Log.d("alldataafter", String.valueOf(alldata.get(alldata.size()-1).getLimit()));
-        Log.d("alldataafter", String.valueOf(alldata.get(alldata.size()-1).getSmoked()));
-        Log.d("alldataafter", String.valueOf(alldata.get(alldata.size()-1).getRemaining()));
+        Log.d("alldata", "After add: " + String.valueOf(alldata.get(alldata.size()-1).getLimit()));
+        Log.d("alldata", "After add: " + String.valueOf(alldata.get(alldata.size()-1).getSmoked()));
+        Log.d("alldata", "After add: " + String.valueOf(alldata.get(alldata.size()-1).getRemaining()));
     }
 
     public void calcAndUpdateTimeSinceLast(View view) {
@@ -134,6 +263,7 @@ public class Overview extends Fragment {
         TextView limit = (TextView) view.findViewById(R.id.limit);
         TextView smoked = (TextView) view.findViewById(R.id.smoked);
         TextView remaining = (TextView) view.findViewById(R.id.remaining);
+
         //set overview text
         limit.setText(String.valueOf(alldata.get(alldata.size()-1).getLimit()));
         smoked.setText(String.valueOf(alldata.get(alldata.size()-1).getSmoked()));
@@ -146,7 +276,7 @@ public class Overview extends Fragment {
         int sum = 0;
         float avg = 0;
         int count = 0;
-        for (int i = alldata.size()-1; i > alldata.size()-7; i--){
+        for (int i = alldata.size()-1; i >= 0; i--){
             count+=1;
             sum = sum + alldata.get(i).getSmoked();
         }
@@ -163,7 +293,7 @@ public class Overview extends Fragment {
 
         double remaining = 0;
         double saved = 0;
-        for (int i = 0; i < alldata.size()-1; i++){
+        for (int i = alldata.size()-1; i >= 0; i--){
             remaining = remaining + alldata.get(i).getRemaining();
         }
         saved = remaining * (packCost/packSize);
@@ -188,5 +318,5 @@ public class Overview extends Fragment {
         //calculate percentage
         progress.setProgress((int) finalresult);
     }
-}
 
+}

@@ -8,17 +8,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import java.util.Calendar;
-
-import static edu.colorado.keren_megorycohen.ember.Day.alldata;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //hide toolbar
+        getSupportActionBar().hide();
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -54,27 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        //check for current date
-        Calendar rightNow = Calendar.getInstance();
-        int day_of_year = rightNow.get(Calendar.DAY_OF_YEAR);
-        int day_of_month = rightNow.get(Calendar.DAY_OF_MONTH);
-        int month = rightNow.get(Calendar.MONTH) + 1;
-        int year = rightNow.get(Calendar.YEAR);
-
-        //store today's data
-        Day today = new Day(20, 0, day_of_year, day_of_month, month, year);
-
-        //only add today's object to alldata if it hasn't already
-        if(!alldata.contains(today)) {
-            //add today to alldata array
-            alldata.add(today);
-        }
-
-        //print last item of array (should be today)
-        Log.d("alldata", String.valueOf(alldata.get(alldata.size()-1).getLimit()));
-        Log.d("alldata", String.valueOf(alldata.get(alldata.size()-1).getSmoked()));
-        Log.d("alldata", String.valueOf(alldata.get(alldata.size()-1).getRemaining()));
     }
 
 
